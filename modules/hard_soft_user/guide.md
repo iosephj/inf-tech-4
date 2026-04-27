@@ -31,10 +31,7 @@ Está formado por:
 🔹 Idea clave: *ninguno funciona solo, siempre trabajan juntos.*
 
 
-<br>
-
-
-### Actividad 1
+#### Actividad 1
 
 <span class="grey3 size50">Conexión con Inglés</span>
 
@@ -57,16 +54,16 @@ Respondé:
 - ¿Qué periféricos de entrada y salida intervienen cuando lo usas (teclado, mouse, pantalla, parlantes, etc.)?
 - ¿Cómo circula la información cuando realizás una acción simple, como escribir un mensaje o abrir un programa?
 
-#### Ejemplo:
+**Ejemplo:**
+
 Enviar un mensaje por WhatsApp
 
 - Hardware: celular, pantalla, batería
 - Software: aplicación WhatsApp, sistema operativo
 - Usuario: la persona que escribe y envía
 
-<br>
 
-### Actividad 2
+#### Actividad 2
 
 Identificá los componentes:
 
@@ -107,20 +104,25 @@ El hardware se puede clasificar según su función:
 - **Almacenamiento**: disco, pendrive
 
 
-<br>
+#### Actividad 3
 
+Haz un esquema de los componentes principales del hardware usando la aplicación Paint. Para esto:
 
-### Actividad 3
+a) Copia la imagen de abajo (por ejemplo con la tecla "Imprimir Pantalla") y pégala en Paint.
 
-Haz un esquema de los componentes principales del hardware usando la aplicación Paint. Puedes inspirarte en la imagen de abajo y simplificarla.
+b) Arréglala de modo que quede limpia y de tamaño adecuado.
+
+c) Agrega los nombres de cada componente numerado tanto en español como en inglés. Por ejemplo: **(1)** Pantalla / Screen.
 
 <!-- Image -->
 <br>
-   <center>![](intro_computers_hard_external1_400px.png){width=400px}</center>
+   <center>![](intro_computers_hard_external1_400px.png){width=500px}</center>
    <center>
       <span class="grey3 size50">Fuente: internet</span>
    </center>
 <br>
+
+<span class="red1 size70">**Importante** debes mostrar la pantalla con la tarea hecha en tiempo de clase, es una de la condiciones para aprobar esta unidad.</span>
 
 
 <br>
@@ -146,16 +148,27 @@ El software funciona como por capas, por ejemplo la capa que comanda más direct
 <br>
 
 
+#### Actividad 4
+
+**a)** Haz un dibujo en la carpeta como el anterior pero poniendo los nombres en español.
+
+**b)** Investiga y escribe brevemente en tres reglones las formas de interactuar con el sistema operativo que tiene el usuario. En tu explicación tienen que aparecer las frases: "interfaz gráfica" y "intérprete de comando".
+
+
 <br>
 
 
-### Actividad 4
+### 5. Complemento histórico
 
-**a)** Haz un dibujo como el anterior pero poniendo los nombres en español.
+La máquina analítica de Babbage (siglo XIX) es considerada la primera computadora programable. 
 
-**b)** Investiga y escribe brevemente las formas de interactuar con el sistema operativo que tiene el usuario.
+#### Actividad 5
+
+Investiga y escribe sobre la máquina analitica de Babbage.
 
 
+
+<br>
 
 
 
