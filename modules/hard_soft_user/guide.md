@@ -122,7 +122,7 @@ c) Agrega los nombres de cada componente numerado tanto en español como en ingl
    </center>
 <br>
 
-<span class="red1 size70">**Importante** debes mostrar la pantalla con la tarea hecha en tiempo de clase, es una de la condiciones para aprobar esta unidad.</span>
+<span class="red1 size70">**Importante** debes mostrar la pantalla con la tarea hecha en tiempo de clase, es una de las condiciones para aprobar esta unidad.</span>
 
 
 <br>
@@ -164,55 +164,100 @@ La máquina analítica de Babbage (siglo XIX) es considerada la primera computad
 
 #### Actividad 5
 
-Investiga y escribe sobre la máquina analitica de Babbage.
-
+Investiga y escribe sobre la máquina analítica de Babbage.
 
 
 <br>
 
 
+### 6. Introducción a CMD y PowerShell
+
+En Windows existen herramientas llamadas **intérpretes de comandos** o **terminales**, que permiten interactuar con la computadora escribiendo órdenes en texto. Dos de las más usadas son el **CMD (Símbolo del sistema)** y **PowerShell**.
+
+El **CMD** es más antiguo y sencillo. Permite realizar tareas básicas como navegar entre carpetas, copiar archivos o ejecutar programas.
+
+El **PowerShell** es más moderno y potente. Además de ejecutar comandos similares al CMD, puede trabajar con objetos, automatizar tareas y administrar el sistema de manera más avanzada.
+
+Aprender a usar la terminal ayuda a comprender mejor cómo funciona el sistema operativo y permite realizar tareas de forma rápida y eficiente.
+
+#### Actividad 6
+
+Estos son algunos comandos básicos
+
+| Comando | Función                            |
+| ------- | ---------------------------------- |
+| `dir`   | Muestra archivos y carpetas        |
+| `cd`    | Cambia de carpeta                  |
+| `mkdir` | Crea una carpeta                   |
+| `cls`   | Limpia la pantalla                 |
+| `echo`  | Muestra texto                      |
+| `type`  | Muestra el contenido de un archivo |
+
+**Ejercicios de práctica:**
+
+**a)** Abrir la terminal
+
+1. Abrir CMD o PowerShell.
+2. Escribir:
+
+```bash
+echo Hola mundo
+```
+
+3. Presionar Enter. (Siempre se presiona Enter luego de cada comando)
+
+**b)** Ver contenido de una carpeta
+
+1. Escribir:
+
+```bash
+dir
+```
+
+2. Observar los archivos y carpetas que aparecen.
+3. Ahora abre el explorador de archivos y busca la carpeta "Mis documentos". Escribe cmd en la barra de direcciones del explorador y se abrirá el terminal en esa ubicación, verás algo como: `C:\Users\User\Documents>` donde user es el nombre del usuario.
+4. Pon `dir` y presiona Enter para ver el contenido de la carpeta
 
 <div hidden>
+También puedes abrir CMD directamente sobre una carpeta específica haciendo:
 
-## 5. Relación entre componentes
-
-El funcionamiento es así:
-
-Usuario → Software → Hardware
-
-Ejemplo:
-- Usuario hace clic
-- Software interpreta la acción
-- Hardware ejecuta
-
----
-
-## Actividad 4 (pensar)
-
-Explicá con tus palabras:
-
-👉 ¿Qué pasaría si falta uno de los tres componentes?
-
----
-
-## 6. Actividad final
-
-Elegí una acción cotidiana (ej: escuchar música, jugar, enviar mail) y completá:
-
-- Hardware:
-- Software:
-- Usuario:
-
----
-
-## Idea importante
-
-Los sistemas informáticos no son solo computadoras:
-también incluyen celulares, cajeros automáticos, consolas, etc.
-
----
-
+Shift + clic derecho en una carpeta → “Abrir terminal aquí”
+o escribiendo cmd en la barra de direcciones del Explorador de archivos.
 </div>
+
+**c)** Crear una carpeta y un archivo
+
+1. Abre CMD o PowerShell en "Mis Documentos" como en el punto anterior. Luego creas una carpeta llamada `practica` con `mkdir` (Siempre presiona :
+
+```bash
+mkdir practica
+```
+
+2. Verificar que se haya creado usando `dir`.
+
+3. Crear un archivo de texto llamado test.txt:
+
+```bash
+echo Este es un archivo de testeo > test.txt
+```
+
+4. Mostrar el contenido del archivo:
+
+```bash
+type texto.txt
+```
+
+**d)** Ejercicio Opcional
+
+1. Copiar el archivo:
+
+```bash
+copy test.txt copia.txt
+```
+
+2. Verificar con `dir`.
+3. Abrir el archivo con "Bloc de Notas" y agregarle un renglón con el siguiente texto: "Hola, este es otro renglón". Luego guardar y cerrar.
+4. Mostrar el contenido del archivo nuevamente con `type`
 
 
 <!-- *** GUIDE END *** -->
