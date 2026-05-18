@@ -348,6 +348,99 @@ cerrar.</li>
 <li>Mostrar el contenido del archivo nuevamente con
 <code>type</code></li>
 </ol>
+<p><br></p>
+<h3 id="usando-powershell">7. Usando PowerShell</h3>
+<p>El intérprete de comando CMD es antiguo, PowerShell es uno más
+moderno y potente.</p>
+<p>Con PowerShell podemos observar algunas partes internas del sistema
+operativo. Uno de los comandos más útiles para empezar es:</p>
+<p><code>powershell id=&quot;zwjplj&quot; Get-Process</code></p>
+<p>Get significa obtener o poner. En este caso este comando muestra los
+procesos que están funcionando en la computadora, es decir, los
+programas y tareas que Windows está ejecutando en ese momento.</p>
+<p>Aparece una tabla parecida a esta:</p>
+<p><code>text id=&quot;8t6o0o&quot; Handles  NPM(K)  PM(K)  WS(K)  CPU(s)   Id  SI ProcessName</code></p>
+<h4 id="significado-de-cada-columna">Significado de cada columna</h4>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Handles</code></td>
+<td>Cantidad de recursos abiertos por el programa (archivos, ventanas,
+etc.).</td>
+</tr>
+<tr>
+<td><code>NPM(K)</code></td>
+<td>Memoria no paginada usada por el proceso. Se mide en KB
+(kilobytes).</td>
+</tr>
+<tr>
+<td><code>PM(K)</code></td>
+<td>Memoria paginada usada. También en KB.</td>
+</tr>
+<tr>
+<td><code>WS(K)</code></td>
+<td>Memoria RAM que el programa está usando actualmente. Se mide en
+KB.</td>
+</tr>
+<tr>
+<td><code>CPU(s)</code></td>
+<td>Tiempo total de uso del procesador por el proceso, en segundos.</td>
+</tr>
+<tr>
+<td><code>Id</code></td>
+<td>Identificador único del proceso (PID).</td>
+</tr>
+<tr>
+<td><code>SI</code></td>
+<td>Número de sesión del usuario que ejecuta el proceso.</td>
+</tr>
+<tr>
+<td><code>ProcessName</code></td>
+<td>Nombre del proceso o programa.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="actividad-7">Actividad 7</h4>
+<p><strong>a)</strong> Investiga y anota brevemente que significa
+memoria paginada y no paginada.</p>
+<p><strong>b)</strong> Ejecutando el comando <code>Get-Process</code>
+aparece un proceso con <code>WS(K)</code> de 688920. Esto es el consumo
+de memoria RAM en KB (kilobytes). Teniendo en cuenta la tabla de abajo
+¿Cuántos megabytes y gigabytes está consumiendo ese proceso? Hacerlo y
+mostrar el uso de la regla de tres simple.</p>
+<pre><code>1024 KB = 1 MB
+1024 MB = 1 GB</code></pre>
+<p><strong>c)</strong> Abrir PowerShell y ejecutar el comando
+<code>Get-Process</code>. Prestar atención sobre todo a:</p>
+<ul>
+<li><code>ProcessName</code> → nombre del programa</li>
+<li><code>WS(K)</code> → memoria RAM usada</li>
+<li><code>CPU(s)</code> → uso del procesador</li>
+<li><code>Id</code> → número identificador del proceso</li>
+</ul>
+<p>Escribe: ¿Cuál proceso consume más RAM? ¿A que aplicación
+pertenece?</p>
+<p><strong>d)</strong> Ordenar el resultado del comando por uso de RAM.
+Para esto primero busca y escribe el significado de la palabra
+<code>sort</code> en inglés. Luego aplica el siguiente comando:
+<code>Get-Process | Sort-Object WS -Descending</code>. Busca y escribe
+que significado tiene la barra vertical <code>|</code> en este
+comando.</p>
+<p><strong>e)</strong> Para ordenar por uso del procesador que deberías
+cambiar en el comando anterior. Pruébalo.</p>
+<p><strong>f)</strong> Prueba este comando:
+<code>Get-Process | Sort-Object WS -Descending | Select-Object -First 5</code>.
+Luego explica oralmente al profesor que es lo que hace.</p>
 <!-- *** GUIDE END *** -->
 <!-- *** GUIDE AUXILIARY TEMPLATES *** -->
 <div hidden>

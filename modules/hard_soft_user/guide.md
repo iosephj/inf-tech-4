@@ -260,6 +260,70 @@ copy test.txt copia.txt
 4. Mostrar el contenido del archivo nuevamente con `type`
 
 
+<br>
+
+
+### 7. Usando PowerShell
+
+El intérprete de comando CMD es antiguo, PowerShell es uno más moderno y potente. 
+
+Con PowerShell podemos observar algunas partes internas del sistema operativo. Uno de los comandos más útiles para empezar es:
+
+```powershell id="zwjplj"
+Get-Process
+```
+
+Get significa obtener o poner. En este caso este comando muestra los procesos que están funcionando en la computadora, es decir, los programas y tareas que Windows está ejecutando en ese momento.
+
+Aparece una tabla parecida a esta:
+
+```text id="8t6o0o"
+Handles  NPM(K)  PM(K)  WS(K)  CPU(s)   Id  SI ProcessName
+```
+
+
+#### Significado de cada columna
+
+| Columna       | Significado                                                               |
+| ------------- | ------------------------------------------------------------------------- |
+| `Handles`     | Cantidad de recursos abiertos por el programa (archivos, ventanas, etc.). |
+| `NPM(K)`      | Memoria no paginada usada por el proceso. Se mide en KB (kilobytes).      |
+| `PM(K)`       | Memoria paginada usada. También en KB.                                    |
+| `WS(K)`       | Memoria RAM que el programa está usando actualmente. Se mide en KB.       |
+| `CPU(s)`      | Tiempo total de uso del procesador por el proceso, en segundos.           |
+| `Id`          | Identificador único del proceso (PID).                                    |
+| `SI`          | Número de sesión del usuario que ejecuta el proceso.                      |
+| `ProcessName` | Nombre del proceso o programa.                                            |
+
+
+#### Actividad 7
+
+**a)** Investiga y anota brevemente que significa memoria paginada y no paginada.
+
+**b)** Ejecutando el comando `Get-Process` aparece un proceso con `WS(K)` de 688920. Esto es el consumo de memoria RAM en KB (kilobytes). Teniendo en cuenta la tabla de abajo ¿Cuántos megabytes y gigabytes está consumiendo ese proceso? Hacerlo y mostrar el uso de la regla de tres simple.
+
+```
+1024 KB = 1 MB
+1024 MB = 1 GB
+```
+
+**c)** Abrir PowerShell y ejecutar el comando `Get-Process`. Prestar atención sobre todo a:
+
+* `ProcessName` → nombre del programa
+* `WS(K)` → memoria RAM usada
+* `CPU(s)` → uso del procesador
+* `Id` → número identificador del proceso
+
+Escribe: ¿Cuál proceso consume más RAM? ¿A que aplicación pertenece?
+
+**d)** Ordenar el resultado del comando por uso de RAM. Para esto primero busca y escribe el significado de la palabra `sort` en inglés. Luego aplica el siguiente comando: `Get-Process | Sort-Object WS -Descending`. Busca y escribe que significado tiene la barra vertical `|` en este comando.
+
+**e)** Para ordenar por uso del procesador que deberías cambiar en el comando anterior. Pruébalo. 
+
+**f)** Prueba este comando: `Get-Process | Sort-Object WS -Descending | Select-Object -First 5`. Luego explica oralmente al profesor que es lo que hace.
+
+
+
 <!-- *** GUIDE END *** -->
 
 
