@@ -314,13 +314,19 @@ Handles  NPM(K)  PM(K)  WS(K)  CPU(s)   Id  SI ProcessName
 * `CPU(s)` → uso del procesador
 * `Id` → número identificador del proceso
 
-Escribe: ¿Cuál proceso consume más RAM? ¿A que aplicación pertenece?
+Escribe: ¿Cuál proceso consume más RAM? ¿A qué aplicación pertenece?
 
 **d)** Ordenar el resultado del comando por uso de RAM. Para esto primero busca y escribe el significado de la palabra `sort` en inglés. Luego aplica el siguiente comando: `Get-Process | Sort-Object WS -Descending`. Busca y escribe que significado tiene la barra vertical `|` en este comando.
 
 **e)** Para ordenar por uso del procesador que deberías cambiar en el comando anterior. Pruébalo. 
 
 **f)** Prueba este comando: `Get-Process | Sort-Object WS -Descending | Select-Object -First 5`. Luego explica oralmente al profesor que es lo que hace.
+
+<br>
+
+### 8. Tarea adicional
+
+Explica oralmente los temas de esta unidad. Debes ser capaz de hablar al menos tres minutos (cronometrados). Puedes concentrarte en un tema que sepas más y explicarlo mejor dedicándole más tiempo.
 
 
 

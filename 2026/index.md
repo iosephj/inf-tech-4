@@ -17,11 +17,11 @@ version: "13/04/26"
 
 ## Guías de aprendizaje
 
-**1.** [Componentes de los sistemas informáticos](modules/hard_soft_user/guide.html)
+**1.** [Componentes de los sistemas informáticos](hard-soft/guide.html)
 
 ---
 
-**Verifica** tu progreso [aquí](https://script.google.com/macros/s/AKfycbyvHb0UdlvLyjDOfbcyq1EIbvj0KpIKTzec9dcPJwlIu34WPe4EptGnaYw7xaRJ4naX4Q/exec) poniendo como clave las dos primeras letras de tu nombre completo (en minúscula, sin tíldes). Ejemplo: Para Juan Eduardo Juarez Pérez la clave sería: **juedjupe** (primero nombres después apellidos).
+**Verifica** tu progreso [aquí](https://script.google.com/macros/s/AKfycbyvHb0UdlvLyjDOfbcyq1EIbvj0KpIKTzec9dcPJwlIu34WPe4EptGnaYw7xaRJ4naX4Q/exec) poniendo como clave las dos primeras letras de cada uno de tus apellidos y luego las de cada uno de tus nombres. Ejemplo: Para `Juarez Pérez Juan Eduardo` la clave sería: **jupejued** (primero apellidos y después nombres).
 
 
 
