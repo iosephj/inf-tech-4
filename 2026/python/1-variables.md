@@ -145,7 +145,7 @@ Salida:
 
 ### 6. Variables
 
-Las variables permiten guardar información.
+Las variables permiten guardar información. El nombre de una variable debe comenzar con una letra o `_`. Luego del primer carácter pueden contener letras, números o  `_`.
 
 ```python
 edad = 16
@@ -202,7 +202,7 @@ Salida:
 <br>
 
 
-### 8. Hacer programas simples
+### 8. Hacer programas usando variables
 
 Escribir y ejecutar estos ejemplos de programas según las explicaciones de clase.
 
@@ -239,40 +239,55 @@ Salida:
 *Programa 3: Área de un rectángulo*
 
 ```python
+# Las medidas están en metros
+
 base = 6
 altura = 4
 
 area = base * altura
 
-print(area)
+print(f"El área en metros cuadrados es: {area}")
 ```
 
 Salida:
 
 ```text
-24
+El área en metros cuadrados es: 24
 ```
 
 #### Actividad
 
 Haz los siguientes programas, usa variables y muestra los resultados:
 
-1. Cálculo de velocidad, donde la distancia = 120 y el tiempo = 2
+**a)** Calcula la velocidad de un vehículo que recorre la distancia de 120 metros en el tiempo de 2 segundos. Muestra el resultado en pantalla con el siguiente formato: La velocidad en metros por segundo es: 2
 
-2. Crea una variable llamada `precio` con valor 250 y muéstrala.
+**b)** Una fábrica produce `p` piezas por hora y se trabaja `h` horas por día. Escribe un programa que calcule la producción diaria para p = 35 y h = 8. Muestra el resultado con una frase como: La producción diaria es de 280 piezas.
 
-3. Calcula el perímetro de un cuadrado de lado 8.
+**c)** Calcula el perímetro de un cuadrado de lado 8 (metros) y muestra el resultado como una frase.
 
-4. Calcula el área de un triángulo de base 10 y altura 6.
+**d)** En Python las variables pueden ir cambiando de valor. Recuerda que Python analiza y ejecuta siempre desde **arriba** hacia **abajo**. Con esto en mente piensa que muestra en pantalla el siguiente programa:
 
-5. Una máquina produce 25 piezas por hora. ¿Cuántas piezas producirá en 8 horas?
+```python
+a = 10
+b = 20
+a = 30
+print(a + b)
+```
 
-6. Un tractor recorre 180 km en 3 horas. Calcula su velocidad promedio.
+**e)** Un comerciante compra un producto a 3 USD (dólares) y lo vende a $6000 (pesos). ¿Qué ganancia obtuvo si la cotización del dolar cuando lo comrpó era de 1 USD = 1440 pesos? Usa al menos estas variables: costo_en_dolares, costo_en_pesos y muestra el resultado en pantalla.
+
+**f)** Un tanque contiene `a` litros de agua. Se agregan `b` litros y luego se extraen `c` litros. Escribe un programa que represente la cantidad final de agua. Prueba el programa con distintos valores. Muestra el resultado como una frase.
+
+**g)** Prueba el siguiente programa y escribe una explicación de porqué el programa muestra el resultado 101.
+
+```python
+cant = 100
+cant = cant + 1
+print(cant)
+```
 
 
-
-
-
+> Para aprobar esta guía debes mostrar y explicar al profesor los problemas **f)** y **g)**. 
 <!-- *** GUIDE END *** -->
 
 
@@ -287,7 +302,7 @@ Haz los siguientes programas, usa variables y muestra los resultados:
 
 <!-- Image -->
 <br>
-   <center>![](){width=400px}</center>
+   <center>{width=400px}</center>
    <center>
       <span class="grey3 size70">. </span>
       <span class="grey3 size50">Fuente: </span>
