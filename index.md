@@ -18,6 +18,11 @@ version: "13/04/26"
 ## Guías de aprendizaje
 
 **1.** [Componentes de los sistemas informáticos](2026/hard-soft/guide.html)
+ 
+**2.** [Introducción a Python]() <br> &emsp; [1. Instalación y uso del intérprete](python/1-intro.html)
+
+
+<br>
 
 ---
 
