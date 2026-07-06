@@ -37,7 +37,11 @@ version: "13/04/26"
 
 **1.** [Componentes de los sistemas informáticos](hard-soft/guide.html)
 
+**Programación básica con Python**
+
 **2.** [Introducción a Python](python/1-variables.html)
+
+**3.** [Entrada de datos y conversión de tipos](python/2-entrada-tipos.html)
 
 
 ---
