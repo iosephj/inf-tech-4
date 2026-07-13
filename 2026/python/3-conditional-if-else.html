@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Condicionales (if - else)</title>
+  <style>
+
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root {--black: #000000--light-gray-1: #f2f2f2; --light-gray-2: #cccccc; --light-gray-3: #b3b3b3; --mid-gray: #999999; --dark-gray-1: #808080; --dark-gray-2: #666666; --dark-gray-3: #555555; --dark-gray-4: #333333; --dark-gray-5: #222222; --zebra-bg: #f8f8f8; --blue-1: #6495ed; --blue-2: #276cdf; --blue-3: #003366; --blue-4: #2f5597; --blue-5: #184965; --blue-6: #1f4e79; --cyan-1: #7dbed8; --cyan-2: #27a2db; --green-1: #81b524; --red-1: #ec5469; --red-2: #f44336; --rose-1: #ec9998; --gold-1: #df9d43; --orange-1: #fda556; --orange-2: #ff9505; --purple-1: #ff40ff; --purple-2: #d164d7; }:root {--text-color: var(--dark-gray-5); --secondary-text-color: var(--dark-gray-4); --title-color: var(--blue-6); --heading-color: var(--dark-gray-5);--border-color: var(--light-gray-3); --example-border-color: var(--blue-6); --solutions-text-color: var(--dark-gray-1); --warning-color: var(--orange-2); --note-color: var(--dark-gray-2);--error-color: var(--red-2); --figure-caption-color: var(--dark-gray-3); --figure-source-color: var(--dark-gray-2); --background-color: #FFFFFF; --example-background-color: #FFFFFF; }body {font-family: Arial, sans-serif;font-size: 1.3em;color: var(--text-color);line-height: 1.4;margin: auto;padding: 1.5em;}h1 {color: var(--title-color); border-bottom: 1px solid var(--border-color);padding-bottom: 0.3em;}h2 {margin-top: 1.8em;margin-bottom: 0.4em;color: var(--heading-color);}h3 {margin-top: 1.1em;margin-bottom: 0.3em;color: var(--heading-color);}ol { list-style: none;counter-reset: item;margin-left: 0;padding-left: 0.5em; }ol li { counter-increment: item; } ol li::before {content: counter(item) ") ";font-weight: bold;}blockquote {margin: 1em 0;padding: 0 15px;color: var(--dark-gray-2);border-left: 4px solid var(--light-gray-2);}table {border-collapse: collapse;width: 100%;margin: 1em 0;}table th, table td {padding: 6px 13px;border: 1px solid var(--light-gray-2);}table th {font-weight: bold;background-color: var(--light-gray-1);}table tr:nth-child(2n) {background-color: var(--zebra-bg);}code {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size: 85%;background-color: rgba(0,0,0,0.04);padding: 0.2em 0.4em;border-radius: 3px;}pre {padding: 16px;overflow: auto;font-size: 85%;line-height: 1.45;background-color: var(--light-gray-1);border-radius: 3px;margin-bottom: 16px;}pre code {background-color: transparent;padding: 0;font-size: 100%;}a {color: var(--blue-6);text-decoration: none;}a:hover {text-decoration: underline;}.example {display: block;background: var(--example-background-color);margin: 0.6em 0;padding-left: 0.6em; border-left: 2px solid var(--example-border-color);}.activity {display: block;margin: 0.6em 0;padding-left: 0.6em; }.solutions {display: block;margin-top: 0.6em;font-size: 0.85em; color: var(--solutions-text-color);}.warning {display: block;font-size: 0.8em;color: var(--warning-color);}.note {display: block;margin: 0.6em 0;padding-left: 0.6em; color: var(--note-color);font-size: 0.95em;}.figure {display: block;text-align: center;margin: 1.5em auto;}.figure img {display: block;max-width: 100%;height: auto;margin: 0 auto 0 auto; }.figure small {display: block;font-size: 0.7em;color: var(--figure-caption-color);margin-top: -0.5em }code .kw { color: #000000; font-weight: bold; } code .dt { color: #ed6a43; } code .dv { color: #009999; } code .bn { color: #009999; } code .fl { color: #009999; } code .ch { color: #009999; } code .st { color: #183691; } code .co { color: #969896; font-style: italic; }code .ot { color: #0086b3; } code .al { color: #a61717; font-weight: bold; } code .fu { color: #63a35c; } code .er { color: #a61717; background-color: #e3d2d2; } code .cn { color: #008080; } code .cf { color: #000000; font-weight: bold; } code .op { color: #000000; } code .bu { color: #000000; } code .pp { color: #999999; font-weight: bold; } code .va { color: #008080; } @media print {:root {--text-color: #000000;--secondary-text-color: #333333;--title-color: #000000; --heading-color: #000000;--border-color: #999999;--example-border-color: #555555;--figure-caption-color: #333333;--figure-source-color: #555555;--solutions-text-color: #444444;--note-color: #000000;--warning-color: #000000;--error-color: #000000;--background-color: #FFFFFF;--example-background-color: #FFFFFF;}@page {size: A4;margin: 1.2cm;}body {font-family: Arial, Helvetica, sans-serif;font-size: 10.5pt;line-height: 1.35;color: #000;column-fill: auto; column-count: 2;column-gap: 1cm;}h1 { font-size: 14pt; margin: 0 0 6pt 0; }h2 { font-size: 12pt; margin: 8pt 0 4pt 0; }h3 { font-size: 11pt; margin: 6pt 0 3pt 0; }h1, h2, h3 {break-after: avoid;break-inside: avoid;}p {margin: 0 0 4pt 0;text-align: justify;}blockquote {border-left: 3px solid #666666;color: #333333;margin: 6pt 0;padding-left: 8pt;}ul, ol {margin: 0 0 4pt 12pt;padding: 0;}li { margin-bottom: 2pt; }code, pre {font-family: "Courier New", Courier, monospace;font-size: 9.5pt;background: var(--light-gray-1);padding: 1px 3px;border-radius: 2px;}pre {padding: 6pt;overflow: hidden;break-inside: avoid;}img {max-width: 100%;height: auto;break-inside: avoid;margin: 12pt auto; }table {width: 100%;border-collapse: collapse;font-size: 9.5pt;}th, td {border: 1px solid #000;padding: 3pt;}table tr:nth-child(2n) {background-color: var(--light-gray-1); }nav, footer, .no-print {display: none;}.example,.activity,.solutions,.note,.warning,blockquote {break-inside: avoid;}}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Condicionales (if - else)</h1>
+</header>
+<!-- *** GUIDE START *** -->
+<h2 id="repaso-de-inglés">1. Repaso de inglés</h2>
+<h3 id="actividad">Actividad</h3>
+<p>Resuelve estas actividades en la carpeta:</p>
+<div class="activity">
+<ol type="1">
+<li>Une cada palabra con su significado.</li>
+</ol>
+<pre><code>  if          verdadero
+
+  false       si
+
+  else        falso
+
+  true        si no</code></pre>
+<ol start="2" type="1">
+<li>Lee el siguiente texto y completa los espacios usando las palabras:
+<strong>if – hungry – rains – umbrella – home – true –
+false</strong></li>
+</ol>
+<p>Every morning I look outside. <strong>If</strong> it
+<strong>____________</strong>, I take an <strong>____________</strong>.
+If the weather is good, I walk to school. If I am
+<strong>____________</strong>, I eat breakfast before leaving
+<strong>____________</strong>. A condition can be
+<strong>____________</strong> or <strong>____________</strong>. We use
+the same idea when we write programs in Python.</p>
+</div>
+<h2 id="tomar-decisiones-con-if">2. Tomar decisiones con “if”</h2>
+<p>Hasta ahora todos nuestros programas ejecutaban siempre las mismas
+instrucciones.</p>
+<p>Pero muchas veces queremos que el programa decida qué hacer, por
+jemplo:</p>
+<ul>
+<li>Si el alumno aprobó, mostrar un mensaje.</li>
+<li>Si una persona es mayor de edad, permitir el ingreso.</li>
+</ul>
+<p>Para eso usamos <code>if</code>.</p>
+<h3 id="la-estructura-básica">La estructura básica</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condición:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    instrucciones</span></code></pre></div>
+<p>Si la condición es verdadera (<code>True</code>), las instrucciones
+se ejecutan.</p>
+<p>Si la condición es falsa (<code>False</code>), se omiten.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Edad: &quot;</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> edad <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Eres mayor de edad.&quot;</span>)</span></code></pre></div>
+<p>Si el usuario escribe 20 la condición <code>edad &gt;= 18</code> es
+verdadera y etonces aparece <code>Eres mayor de edad</code>.</p>
+<p>Si escribe 15 la condición es falsa y el el programa no imprime el
+mensaje.</p>
+</div>
+<h3 id="las-condiciones">Las condiciones</h3>
+<p>Una condición produce solamente dos resultados posibles.</p>
+<ul>
+<li><code>True</code></li>
+<li><code>False</code></li>
+</ul>
+<div class="example">
+<p>Ejemplos:</p>
+<p><code>10 &gt; 5</code> da como resultado <code>True</code></p>
+<p><code>3 &gt; 8</code> da como resultado <code>False</code></p>
+</div>
+<p>Recuerda los operadores que se usan para comparar:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>igual que</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>distinto de</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>mayor que</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>menor que</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>mayor o igual que</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>menor o igual que</td>
+</tr>
+</tbody>
+</table>
+<h3 id="actividad-1">Actividad</h3>
+<div class="activity">
+<ol type="1">
+<li>Escribe un programa que pregunte e ingrese la edad. Si la persona
+tiene 18 años o más, mostrar: <code>Puede votar.</code></li>
+<li>Escribe un programa que pregunte e ingrese un número entero. Si el
+número es positivo, mostrar: <code>El número es positivo</code>.</li>
+<li>Pide ingrasar la temperatura. Si es mayor que 30 grados, mostrar:
+<code>Hace mucho calor.</code></li>
+<li><strong>Sistema de ingreso a una competencia:</strong> Escribe un
+programa que pregunte:</li>
+</ol>
+<ul>
+<li>nombre del participante;</li>
+<li>edad;</li>
+<li>promedio escolar.</li>
+</ul>
+<p>El programa debe hacer lo siguiente:</p>
+<ul>
+<li><p>Si la persona tiene <strong>16 años o más</strong> y su promedio
+es <strong>7 o mayor</strong>, mostrar:
+<code>Felicitaciones, puedes inscribirte</code></p></li>
+<li><p>Si no cumple la condición, el programa no debe mostrar ese
+mensaje.</p></li>
+</ul>
+<p>Además, siempre debe mostrar al final:
+<code>Gracias por utilizar el sistema.</code></p>
+</div>
+<h2 id="el-uso-de-else">3. El uso de else</h2>
+<p>Cuando la condición es falsa y queremos tomar acciones hay que usar
+<code>else</code></p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>edad <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Edad: &quot;</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> edad <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Eres mayor de edad.&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Eres menor de edad&quot;</span>)</span></code></pre></div>
+<p>Aquí si el usuario escribe 15 la condición es falsa y el el programa
+imprime el mensaje: <code>Eres menor de edad</code>.</p>
+</div>
+<h3 id="actividades">Actividades</h3>
+<div class="activity">
+<ol type="1">
+<li>Pide un número e indica si es positivo o negativo. Se supone que
+nunca se ingresa el cero que no es ni positivo ni negativo.</li>
+<li>Pide dos números. Indica cuál de los dos es mayor.</li>
+<li>Pide la nota de un examen. Si la nota es 7 o mayor, mostrar:
+<code>Aprobado</code>. En caso contrario: <code>Desaprobado</code></li>
+<li>Pide la contraseña. La contraseña correcta es:
+<code>python123</code>. Si coincide, mostrar:
+<code>Acceso permitido</code>. Si no coincide:
+<code>Acceso denegado</code></li>
+<li><strong>Sistema de acceso a un torneo escolar:</strong> Escribe un
+programa que solicite:</li>
+</ol>
+<ul>
+<li>Nombre del participante.</li>
+<li>Edad.</li>
+<li>Promedio general.</li>
+<li>¿Presentó la autorización? (responder <strong>si</strong> o
+<strong>no</strong>).</li>
+</ul>
+<p>El participante podrá inscribirse <strong>únicamente si</strong>:</p>
+<ul>
+<li>tiene <strong>16 años o más</strong>, <strong>y</strong></li>
+<li>su promedio es <strong>7 o superior</strong>,
+<strong>y</strong></li>
+<li>presentó la autorización.</li>
+</ul>
+<p>Si cumple todas las condiciones, mostrar:</p>
+<pre><code>¡Felicitaciones, [nombre]!
+Tu inscripción fue aceptada.</code></pre>
+<p>En caso contrario, mostrar:</p>
+<pre><code>Lo sentimos, no cumples los requisitos para participar.</code></pre>
+<p>Al finalizar, el programa debe imprimir:</p>
+<pre><code>Gracias por utilizar el sistema.</code></pre>
+<div class="warning">
+<p>Para aprobar esta guía de deben mostrar todos las actividades y
+explicar este último problema.</p>
+</div>
+</div>
+<!-- *** GUIDE END *** -->
+<!-- *** GUIDE AUXILIARY THINGS *** -->
+<!--
+
+● Sections: example, activity. soluciones, img-foot, warning, note
+
+::: example
+### Ejemplo: Cálculo de derivadas
+Aquí va el contenido de tu ejemplo. Puedes usar Markdown normal adentro.
+:::
+
+
+● Image:
+
+::: figure
+![](imagen.png){width=400px}
+
+<small>Pie (Source)</small>
+:::
+
+[⌕](../../images/ ) 
+
+● Videos:
+
+ Change XXX to video-id and put time in seconds
+
+ - Yotube with start point: [Mira este momento clave en el video](https://www.youtube.com/watch?v=XXX&t=123s)
+
+ - Youtubetrimmer with start and end point: [Mirá este momento puntual del video](https://youtubetrimmer.com/view/?v=XXX&start=120&end=150&loop=0)
+
+-->
+</body>
+</html>

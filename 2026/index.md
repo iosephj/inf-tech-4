@@ -44,6 +44,8 @@ version: "13/04/26"
 **3.** [Entrada de datos y conversión de tipos](python/2-entrada-tipos.html)
 
 
+**4.** [Condicionales if - else](python/3-conditional-if-else.html)
+
 ---
 
 **Verifica** tu avance [aquí](https://script.google.com/macros/s/AKfycbyvHb0UdlvLyjDOfbcyq1EIbvj0KpIKTzec9dcPJwlIu34WPe4EptGnaYw7xaRJ4naX4Q/exec) poniendo como clave las dos primeras letras de cada uno de tus apellidos y luego las de cada uno de tus nombres. Ejemplo: Para `Juarez Pérez Juan Eduardo` la clave sería: **jupejued** (primero apellidos y después nombres). <span class="grey3 size70">**A:** Aprobado, **P:** Pendiente</span>
