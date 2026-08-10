@@ -86,17 +86,13 @@ else:
 
 Python analiza las condiciones **de arriba hacia abajo**.
 
-**1.** ¿Se cumple el `if`?
-
+1. ¿Se cumple el `if`?
    - Sí → ejecuta ese bloque y termina.
    - No → continúa.
-
-**2.** ¿Se cumple el `elif`?
-
+2. ¿Se cumple el `elif`?
    - Sí → ejecuta ese bloque y termina.
    - No → continúa.
-
-**3.** Si ninguna condición fue verdadera, ejecuta el `else`.
+3. Si ninguna condición fue verdadera, ejecuta el `else`.
 
 ::: example
 

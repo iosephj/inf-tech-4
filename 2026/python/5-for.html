@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Ciclo for</title>
+  <style>
+
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root {--black: #000000--light-gray-1: #f2f2f2; --light-gray-2: #cccccc; --light-gray-3: #b3b3b3; --mid-gray: #999999; --dark-gray-1: #808080; --dark-gray-2: #666666; --dark-gray-3: #555555; --dark-gray-4: #333333; --dark-gray-5: #222222; --zebra-bg: #f8f8f8; --blue-1: #6495ed; --blue-2: #276cdf; --blue-3: #003366; --blue-4: #2f5597; --blue-5: #184965; --blue-6: #1f4e79; --cyan-1: #7dbed8; --cyan-2: #27a2db; --green-1: #81b524; --red-1: #ec5469; --red-2: #f44336; --rose-1: #ec9998; --gold-1: #df9d43; --orange-1: #fda556; --orange-2: #ff9505; --purple-1: #ff40ff; --purple-2: #d164d7; }:root {--text-color: var(--dark-gray-5); --secondary-text-color: var(--dark-gray-4); --title-color: var(--blue-6); --heading-color: var(--dark-gray-5);--border-color: var(--light-gray-3); --example-border-color: var(--blue-6); --solutions-text-color: var(--dark-gray-1); --warning-color: var(--orange-2); --note-color: var(--dark-gray-2);--error-color: var(--red-2); --figure-caption-color: var(--dark-gray-3); --figure-source-color: var(--dark-gray-2); --background-color: #FFFFFF; --example-background-color: #FFFFFF; }body {font-family: Arial, sans-serif;font-size: 1.3em;color: var(--text-color);line-height: 1.4;margin: auto;padding: 1.5em;}h1 {color: var(--title-color); border-bottom: 1px solid var(--border-color);padding-bottom: 0.3em;}h2 {margin-top: 1.8em;margin-bottom: 0.4em;color: var(--heading-color);}h3 {margin-top: 1.1em;margin-bottom: 0.3em;color: var(--heading-color);}ol {list-style: none;counter-reset: item;margin-left: 0;padding-left: 0.5em; }ol > li {counter-increment: item;}ol > li::before {content: counter(item) ") ";font-weight: bold;}blockquote {margin: 1em 0;padding: 0 15px;color: var(--dark-gray-2);border-left: 4px solid var(--light-gray-2);}table {border-collapse: collapse;width: 100%;margin: 1em 0;}table th, table td {padding: 6px 13px;border: 1px solid var(--light-gray-2);}table th {font-weight: bold;background-color: var(--light-gray-1);}table tr:nth-child(2n) {background-color: var(--zebra-bg);}code {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size: 85%;background-color: rgba(0,0,0,0.04);padding: 0.2em 0.4em;border-radius: 3px;}pre {padding: 16px;overflow: auto;font-size: 85%;line-height: 1.45;background-color: var(--light-gray-1);border-radius: 3px;margin-bottom: 16px;}pre code {background-color: transparent;padding: 0;font-size: 100%;}a {color: var(--blue-6);text-decoration: none;}a:hover {text-decoration: underline;}.example {display: block;background: var(--example-background-color);margin: 0.6em 0;padding-left: 0.6em; border-left: 2px solid var(--example-border-color);}.activity {display: block;margin: 0.6em 0;padding-left: 0.6em; }.solutions {display: block;margin-top: 0.6em;font-size: 0.85em; color: var(--solutions-text-color);}.warning {display: block;font-size: 0.8em;color: var(--warning-color);}.note {display: block;margin: 0.6em 0;padding-left: 0.6em; color: var(--note-color);font-size: 0.95em;}.figure {display: block;text-align: center;margin: 1.5em auto;}.figure img {display: block;max-width: 100%;height: auto;margin: 0 auto 0 auto; }.figure small {display: block;font-size: 0.7em;color: var(--figure-caption-color);margin-top: -0.5em }code .kw { color: #000000; font-weight: bold; } code .dt { color: #ed6a43; } code .dv { color: #009999; } code .bn { color: #009999; } code .fl { color: #009999; } code .ch { color: #009999; } code .st { color: #183691; } code .co { color: #969896; font-style: italic; }code .ot { color: #0086b3; } code .al { color: #a61717; font-weight: bold; } code .fu { color: #63a35c; } code .er { color: #a61717; background-color: #e3d2d2; } code .cn { color: #008080; } code .cf { color: #000000; font-weight: bold; } code .op { color: #000000; } code .bu { color: #000000; } code .pp { color: #999999; font-weight: bold; } code .va { color: #008080; } @media print {:root {--text-color: #000000;--secondary-text-color: #333333;--title-color: #000000; --heading-color: #000000;--border-color: #999999;--example-border-color: #555555;--figure-caption-color: #333333;--figure-source-color: #555555;--solutions-text-color: #444444;--note-color: #000000;--warning-color: #000000;--error-color: #000000;--background-color: #FFFFFF;--example-background-color: #FFFFFF;}@page {size: A4;margin: 1.2cm;}body {font-family: Arial, Helvetica, sans-serif;font-size: 10.5pt;line-height: 1.35;color: #000;column-fill: auto; column-count: 2;column-gap: 1cm;}h1 { font-size: 14pt; margin: 0 0 6pt 0; }h2 { font-size: 12pt; margin: 8pt 0 4pt 0; }h3 { font-size: 11pt; margin: 6pt 0 3pt 0; }h1, h2, h3 {break-after: avoid;break-inside: avoid;}p {margin: 0 0 4pt 0;text-align: justify;}blockquote {border-left: 3px solid #666666;color: #333333;margin: 6pt 0;padding-left: 8pt;}ul, ol {margin: 0 0 4pt 12pt;padding: 0;}li { margin-bottom: 2pt; }code, pre {font-family: "Courier New", Courier, monospace;font-size: 9.5pt;background: var(--light-gray-1);padding: 1px 3px;border-radius: 2px;}pre {padding: 6pt;overflow: hidden;break-inside: avoid;}img {max-width: 100%;height: auto;break-inside: avoid;margin: 12pt auto; }table {width: 100%;border-collapse: collapse;font-size: 9.5pt;}th, td {border: 1px solid #000;padding: 3pt;}table tr:nth-child(2n) {background-color: var(--light-gray-1); }nav, footer, .no-print {display: none;}.example,.activity,.solutions,.note,.warning,blockquote {break-inside: avoid;}}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Ciclo <code>for</code></h1>
+</header>
+<!-- *** GUIDE START *** -->
+<h2 id="repetir-tareas-con-for">1. Repetir tareas con
+<code>for</code></h2>
+<p>Hasta ahora, los programas que escribimos ejecutaban sus
+instrucciones una vez. Pero muchas veces necesitamos hacer algo varias
+veces: mostrar varios mensajes, revisar caracteres de un texto, contar
+elementos o repetir una operación.</p>
+<p>En Python podemos utilizar <code>for</code> para repetir un bloque de
+instrucciones.</p>
+<div class="example">
+<p><strong>Ejemplo:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hola&quot;</span>)</span></code></pre></div>
+<p><code>range(5)</code> indica que queremos realizar la repetición
+<strong>5 veces</strong>.</p>
+</div>
+<p>La variable <code>i</code> va tomando diferentes valores durante la
+repetición. Puede usarla o no. En el programa anterior no la usas pero
+en el de abajo la usas mostrando su valor:</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<p>El resultado es:</p>
+<pre class="text"><code>0
+1
+2
+3
+4</code></pre>
+</div>
+<p><strong>Una idea importante:</strong> En Python, la instrucción que
+pertenece al <code>for</code> debe estar con sangría (indentada). Esto
+indica que instrucciones se repiten.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hola&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Adios&quot;</span>)</span></code></pre></div>
+<p>Aquí “Hola” se repite 3 veces por que está dentro del
+<code>for</code> y “Adios” muestra una sola vez por que está fuera del
+<code>for</code></p>
+</div>
+<h3 id="actividades">Actividades</h3>
+<div class="activity">
+<p><strong>1)</strong> En la carpeta, sin ejecutar el programa,
+responde:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Python&quot;</span>)</span></code></pre></div>
+<ul>
+<li><em>a.</em> ¿Cuántas veces aparece <code>Python</code>?</li>
+<li><em>b.</em> ¿Qué valores toma <code>i</code>?</li>
+<li><em>c.</em> ¿Qué ocurriría si <code>range(4)</code> fuera
+<code>range(7)</code>?</li>
+</ul>
+<p><strong>2)</strong> Pensar antes de programar: En la carpeta indica
+si para resolver cada situación utilizarías probablemente un
+<code>for</code>. No es necesario escribir código. Justifica brevemente
+las respuestas.</p>
+<ul>
+<li><em>a.</em> Mostrar un mensaje una sola vez.</li>
+<li><em>b.</em> Mostrar los números del 1 al 20.</li>
+<li><em>c.</em> Revisar uno por uno los caracteres de una palabra.</li>
+<li><em>d.</em> Preguntar al usuario una contraseña hasta que sea
+correcta.</li>
+</ul>
+<p><strong>3)</strong> Hacer un programa que muestre 7 veces la frase
+“Buen día” y 3 veces la frase “Buenas noches”. Utiliza dos
+<code>for</code>.</p>
+<p><strong>4)</strong> Hacer un programa que muestre los números del 0
+al 20. Ten en cuenta que <code>range(20)</code> empieza en 0 y termina
+en 19.</p>
+<h2 id="la-variable-del-for">2. La variable del <code>for</code></h2>
+<p>La variable utilizada por <code>for</code> permite saber en qué
+repetición estamos.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Repetition: </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<p>El resultado será:</p>
+<pre class="text"><code>Repetition: 0
+Repetition: 1
+Repetition: 2
+Repetition: 3
+Repetition: 4</code></pre>
+</div>
+<p>El nombre <code>i</code> no es obligatorio. Podemos utilizar otro
+nombre:</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> numero <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(numero)</span></code></pre></div>
+</div>
+<p>Es conveniente elegir nombres que ayuden a entender el programa.</p>
+<h3 id="actividades-1">Actividades</h3>
+<div class="activity">
+<p><strong>1)</strong> Busca y escribe en la carpeta los significados en
+español de: range, loop e indentation.</p>
+<p><strong>2)</strong> Hacer un programa que muestre los números del 1
+al 30.</p>
+</div>
+<h2 id="for-y-decisiones">3. <code>for</code> y decisiones</h2>
+<p>Un <code>for</code> puede contener un <code>if</code>.</p>
+<div class="example">
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(n)</span></code></pre></div>
+<p>El <code>for</code> genera los números y el <code>if</code> decide
+cuáles mostrar. El resultado es:</p>
+<pre class="text"><code>6
+7
+8
+9</code></pre>
+</div>
+<h3 id="actividad">Actividad</h3>
+<div class="activity">
+<p><strong>1)</strong> Modificar el siguiente programa para que muestre
+solo los números mayores que 10 y menores que 20:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">30</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">8</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>           <span class="bu">print</span>(n)</span></code></pre></div>
+<p><strong>2)</strong> Hacer el programa anterior con un solo if usando
+el operador lógico <code>and</code>.</p>
+<p><strong>3)</strong> El <strong>resto</strong> de dividir un número
+par por <code>2</code> es siempre cero. En Python puedes usar el
+operador <code>%</code> para encontrar el valor del resto de una
+división. Por ejemplo <code>5 % 2</code> es <code>1</code>. Haz un
+programa que muestre todos los números pares entre 0 y 20. En el
+programa debe aparacer <code>range(21)</code> y un <code>if</code>.</p>
+</div>
+<div class="warning">
+<p>Esta guía continuará la próxima clase</p>
+</div>
+<div hidden>
+<h2 id="pensar-como-dar-lo-de-and-y-or">Pensar como dar lo de and y
+or</h2>
+<h2 id="recorrer-una-palabra">5. Recorrer una palabra</h2>
+<p>El <code>for</code> no solamente sirve para números.</p>
+<p>También podemos recorrer los caracteres de un texto:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>palabra <span class="op">=</span> <span class="st">&quot;Python&quot;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letra <span class="kw">in</span> palabra:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(letra)</span></code></pre></div>
+<p>El resultado será:</p>
+<pre class="text"><code>P
+y
+t
+h
+o
+n</code></pre>
+<p>En cada repetición, <code>letra</code> contiene un carácter
+diferente.</p>
+<p>Esta posibilidad será especialmente importante cuando trabajemos con
+textos.</p>
+<h3 id="actividad-6-qué-hace-el-programa">Actividad 6 — ¿Qué hace el
+programa?</h3>
+<p>Observa:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">&quot;programacion&quot;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letra <span class="kw">in</span> texto:</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letra <span class="op">==</span> <span class="st">&quot;a&quot;</span>:</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Found!&quot;</span>)</span></code></pre></div>
+<p>Responde:</p>
+<ol type="a">
+<li><p>¿Qué significa <code>for letra in texto</code>?</p></li>
+<li><p>¿Cuántas veces se ejecuta el <code>if</code>?</p></li>
+<li><p>¿Cuántas veces aparecerá <code>Found!</code>?</p></li>
+<li><p>¿Qué ocurriría si cambiamos <code>&quot;a&quot;</code> por
+<code>&quot;o&quot;</code>?</p></li>
+</ol>
+<hr />
+<h2 id="contar-mientras-recorremos-un-texto">6. Contar mientras
+recorremos un texto</h2>
+<p>Podemos utilizar una variable para acumular información.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">&quot;banana&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cantidad <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letra <span class="kw">in</span> texto:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letra <span class="op">==</span> <span class="st">&quot;a&quot;</span>:</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        cantidad <span class="op">=</span> cantidad <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cantidad)</span></code></pre></div>
+<p>El programa recorre cada letra y aumenta <code>cantidad</code> cada
+vez que encuentra una <code>a</code>.</p>
+<p>La variable <code>cantidad</code> comienza en cero y va acumulando el
+resultado.</p>
+<h3 id="actividad-7-en-carpeta">Actividad 7 — En carpeta</h3>
+<p>Analiza el programa anterior y completa la tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Letra</th>
+<th>¿Es <code>&quot;a&quot;</code>?</th>
+<th>Valor de <code>cantidad</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>a</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>n</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>a</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>n</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>a</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Luego responde:</p>
+<p><strong>¿Por qué <code>cantidad</code> debe comenzar en
+0?</strong></p>
+<hr />
+<h2 id="pequeños-analizadores">7. Pequeños analizadores</h2>
+<p>Vamos a construir programas que obtengan información de un texto.</p>
+<h3 id="actividad-8-contar-letras">Actividad 8 — Contar letras</h3>
+<p>Escribe una función llamada:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_letter(texto, letra):</span></code></pre></div>
+<p>Debe recibir un texto y una letra y devolver cuántas veces aparece
+esa letra.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> count_letter(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div>
+<p>debe mostrar:</p>
+<pre class="text"><code>3</code></pre>
+<p>Prueba también con:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>count_letter(<span class="st">&quot;programacion&quot;</span>, <span class="st">&quot;o&quot;</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>count_letter(<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;x&quot;</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>count_letter(<span class="st">&quot;abracadabra&quot;</span>, <span class="st">&quot;a&quot;</span>)</span></code></pre></div>
+<p>No utilices todavía métodos especiales para contar. El objetivo es
+practicar <code>for</code>.</p>
+<hr />
+<h3 id="actividad-9-buscar-una-letra">Actividad 9 — Buscar una
+letra</h3>
+<p>Escribe una función:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contains_letter(texto, letra):</span></code></pre></div>
+<p>Debe devolver <code>True</code> si la letra aparece en el texto y
+<code>False</code> si no aparece.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>contains_letter(<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;y&quot;</span>)</span></code></pre></div>
+<p>debe devolver:</p>
+<pre class="text"><code>True</code></pre>
+<p>y:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>contains_letter(<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;z&quot;</span>)</span></code></pre></div>
+<p>debe devolver:</p>
+<pre class="text"><code>False</code></pre>
+<p><strong>Desafío:</strong> intenta resolverlo recorriendo el texto con
+<code>for</code>.</p>
+<hr />
+<h2 id="separar-los-programas-en-funciones">8. Separar los programas en
+funciones</h2>
+<p>Hasta ahora, probablemente teníamos varios ejercicios dentro del
+mismo archivo.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ejercicio 1&quot;</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># programa...</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ejercicio 2&quot;</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># programa...</span></span></code></pre></div>
+<p>Al ejecutar el archivo, todos los ejercicios se ejecutan.</p>
+<p>Podemos comenzar a organizarlos de otra manera:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejercicio_1():</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hola&quot;</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejercicio_2():</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejercicio_3():</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Otro ejercicio&quot;</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>ejercicio_2()</span></code></pre></div>
+<p>En este caso, solamente se ejecuta <code>ejercicio_2()</code>.</p>
+<p>Las demás funciones están definidas, pero no son llamadas.</p>
+<p>Para ejecutar otro ejercicio podemos cambiar:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ejercicio_2()</span></code></pre></div>
+<p>por:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ejercicio_1()</span></code></pre></div>
+<h3 id="actividad-10-organizar">Actividad 10 — Organizar</h3>
+<p>Toma dos ejercicios anteriores y colócalos en funciones
+diferentes.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejercicio_1():</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejercicio_2():</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>ejercicio_1()</span></code></pre></div>
+<p>Deja solamente <strong>una llamada activa</strong> al final del
+programa.</p>
+<p>Para probar otro ejercicio, comenta la llamada anterior y descomenta
+la nueva:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ejercicio_1()</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>ejercicio_2()</span></code></pre></div>
+<p>Por ahora no es necesario profundizar en cómo funcionan las
+funciones. Las utilizaremos principalmente para mantener ordenados
+nuestros programas.</p>
+<hr />
+<h2 id="proyecto-una-primera-herramienta-para-textos">9. Proyecto: una
+primera herramienta para textos</h2>
+<p>Nuestro proyecto final será un programa capaz de analizar textos,
+pero no queremos que sea solamente una colección de estadísticas.</p>
+<p>Por ahora vamos a construir pequeñas herramientas que puedan formar
+parte de ese programa.</p>
+<h3 id="actividad-11-detector-de-caracteres">Actividad 11 — Detector de
+caracteres</h3>
+<p>Diseña una función que reciba un texto y una letra.</p>
+<p>El programa debe recorrer el texto y mostrar un mensaje cada vez que
+encuentre esa letra.</p>
+<p>Por ejemplo, para:</p>
+<pre class="text"><code>Texto: computadora
+Letra: o</code></pre>
+<p>podría mostrar:</p>
+<pre class="text"><code>Found: o
+Found: o</code></pre>
+<p>Luego modifica el programa para que, además, indique <strong>en qué
+posición</strong> encontró cada aparición.</p>
+<p>No hace falta que el resultado tenga todavía el formato definitivo
+del proyecto.</p>
+<hr />
+<h2 id="actividad-lúdica-el-texto-secreto">10. Actividad lúdica — El
+texto secreto</h2>
+<p>Vamos a utilizar el <code>for</code> para construir una pequeña
+herramienta.</p>
+<p>Un jugador escribe una palabra o frase. El programa debe recorrerla y
+producir una nueva versión siguiendo una regla.</p>
+<p>Por ejemplo, una regla podría ser:</p>
+<blockquote>
+<p>Cada vez que aparezca la letra <code>a</code>, reemplazarla por
+<code>@</code>.</p>
+</blockquote>
+<p>Para:</p>
+<pre class="text"><code>banana</code></pre>
+<p>el resultado sería:</p>
+<pre class="text"><code>b@n@n@</code></pre>
+<h3 id="consigna">Consigna</h3>
+<p>Diseña una función que reciba un texto y produzca una versión
+modificada siguiendo una regla que ustedes mismos definan.</p>
+<p>Algunas posibilidades:</p>
+<ul>
+<li>cambiar determinadas letras por símbolos;</li>
+<li>destacar determinadas letras;</li>
+<li>eliminar determinadas letras;</li>
+<li>duplicar determinadas letras;</li>
+<li>convertir algunas letras en mayúsculas.</li>
+</ul>
+<p>La regla debe poder explicarse claramente en una oración.</p>
+<p><strong>Importante:</strong> no es necesario resolverlo utilizando
+métodos de strings que todavía no vimos. El objetivo principal es
+practicar el recorrido carácter por carácter con <code>for</code>.</p>
+<hr />
+<h2 id="desafío">11. Desafío</h2>
+<p>Escribe una función que reciba un texto y determine cuál de estas
+categorías corresponde:</p>
+<ul>
+<li>contiene la letra <code>a</code>;</li>
+<li>contiene la letra <code>e</code>;</li>
+<li>contiene ambas;</li>
+<li>no contiene ninguna.</li>
+</ul>
+<p>Por ejemplo:</p>
+<pre class="text"><code>&quot;casa&quot; → contiene a
+&quot;verde&quot; → contiene e
+&quot;pared&quot; → contiene ambas
+&quot;ritmo&quot; → ninguna</code></pre>
+<p>Intenta resolverlo utilizando:</p>
+<ul>
+<li><code>for</code>;</li>
+<li><code>if</code> / <code>elif</code> / <code>else</code>;</li>
+<li>variables booleanas.</li>
+</ul>
+<p>No hace falta utilizar funciones o métodos que todavía no hayamos
+estudiado.</p>
+<hr />
+<h2 id="para-pensar">12. Para pensar</h2>
+<p>Hasta ahora utilizamos <code>for</code> para recorrer números y
+textos.</p>
+<p>Responde en tu carpeta:</p>
+<ol type="1">
+<li><p>¿Qué problema resuelve un <code>for</code>?</p></li>
+<li><p>¿Qué diferencia hay entre:</p></li>
+</ol>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span></code></pre></div>
+<p>y:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letra <span class="kw">in</span> texto:</span></code></pre></div>
+<ol start="3" type="1">
+<li><p>¿Qué función cumple la indentación?</p></li>
+<li><p>¿Qué ocurre si colocamos el <code>print</code> fuera del bloque
+del <code>for</code>?</p></li>
+<li><p>¿Por qué recorrer caracteres de un texto puede ser útil para
+nuestro proyecto?</p></li>
+<li><p>¿Qué cosas interesantes podríamos detectar en un texto además de
+contar letras?</p></li>
+</ol>
+<p>Anota al menos <strong>tres ideas</strong>. No tienen que ser
+estadísticas: pueden ser reglas, juegos, patrones, mensajes ocultos o
+cualquier otra cosa que pueda hacer que el análisis resulte
+interesante.</p>
+<p>Creo que hay una decisión pedagógica importante acá: <strong>no
+convertiría esta guía en una introducción general a
+<code>range</code></strong>. Lo usaría como puerta de entrada, pero
+rápidamente pasaría a <code>for letra in texto</code>, porque ahí
+aparece una conexión natural con el proyecto.</p>
+<p>También me parece acertado introducir ya
+<code>def ejercicio_1()</code> / <code>ejercicio_2()</code> aunque
+todavía no desarrolles “Funciones” como tema 7. Es una herramienta
+organizativa: los chicos pueden tener 8–10 ejercicios en el mismo
+<code>.py</code> sin que todos se ejecuten cada vez.</p>
+<p>Y la actividad <strong>“El texto secreto”</strong> me parece
+especialmente útil para lo que venís buscando: empieza a darle al
+analizador una dimensión lúdica sin obligarte todavía a decidir cuál
+será el juego final.</p>
+</div>
+<!-- *** GUIDE END *** -->
+<!-- *** GUIDE AUXILIARY THINGS *** -->
+<!--
+
+● Sections: example, activity. solutions, figure, warning, note
+
+::: example
+### Ejemplo: Cálculo de derivadas
+Aquí va el contenido de tu ejemplo. Puedes usar Markdown normal adentro.
+:::
+
+
+● Image:
+
+::: figure
+![](imagen.png){width=400px}
+
+<small>Pie (Source)</small>
+:::
+
+[⌕](../../images/ ) 
+
+● Videos:
+
+ Change XXX to video-id and put time in seconds
+
+ - Yotube with start point: [Mira este momento clave en el video](https://www.youtube.com/watch?v=XXX&t=123s)
+
+ - Youtubetrimmer with start and end point: [Mirá este momento puntual del video](https://youtubetrimmer.com/view/?v=XXX&start=120&end=150&loop=0)
+
+-->
+</div>
+</body>
+</html>
