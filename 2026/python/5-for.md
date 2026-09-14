@@ -90,6 +90,7 @@ for i in range(4):
 
 **4)** Hacer un programa que muestre los números del 0 al 20. Ten en cuenta que `range(20)` empieza en 0 y termina en 19.
 
+:::
 
 ## 2. La variable del `for`
 
@@ -184,22 +185,13 @@ for n in range(30):
 
 :::
 
-::: warning
-Esta guía continuará la próxima clase
-:::
 
 
+## 4. Recorrer una palabra
 
-<div hidden>
+El `for` no solamente sirve para números. También podemos recorrer los caracteres de un texto:
 
-
-## Pensar como dar lo de and y or
-
-## 5. Recorrer una palabra
-
-El `for` no solamente sirve para números.
-
-También podemos recorrer los caracteres de un texto:
+::: example
 
 ```python
 palabra = "Python"
@@ -219,13 +211,15 @@ o
 n
 ```
 
-En cada repetición, `letra` contiene un carácter diferente.
+:::
 
-Esta posibilidad será especialmente importante cuando trabajemos con textos.
+En cada repetición, `letra` contiene un carácter diferente. Esta posibilidad será especialmente importante cuando trabajemos con textos.
 
-### Actividad 6 — ¿Qué hace el programa?
+### Actividad
 
-Observa:
+::: activity
+
+**1)** Resuelve esto en la carpeta. Observa el programa de abajo sin correrlo y responde las preguntas:
 
 ```python
 texto = "programacion"
@@ -235,23 +229,36 @@ for letra in texto:
         print("Found!")
 ```
 
-Responde:
+Responde en la carpeta:
 
-a. ¿Qué significa `for letra in texto`?
+- ¿Qué valor guarda la variable letra en cada paso del for?
+- ¿Cuántas veces se ejecuta el `if`?
+- ¿Cuántas veces aparecerá `Found!`?
+- ¿Qué ocurriría si cambiamos `"a"` por `"o"`?
 
-b. ¿Cuántas veces se ejecuta el `if`?
+**2)** Haz un programa similar al del punto uno, que recorra una palabra y muestre en pantalla cada letra menos la vocal "a". Por ejemplo si la palabra es "casa" muestra:
 
-c. ¿Cuántas veces aparecerá `Found!`?
+```
+c
+s
+```
 
-d. ¿Qué ocurriría si cambiamos `"a"` por `"o"`?
+**3)** Hacer un programa que recorra una palabra y solo muestre las vocales minúsculas que aparecen. Por ejemplo si la palabra es "caso" solo muestra:
 
----
+```
+a
+o
+```
+:::
 
-## 6. Contar mientras recorremos un texto
+
+## 5. Contar mientras recorremos un texto
 
 Podemos utilizar una variable para acumular información.
 
-Por ejemplo:
+::: example
+
+**Por ejemplo:**
 
 ```python
 texto = "banana"
@@ -263,14 +270,17 @@ for letra in texto:
 
 print(cantidad)
 ```
+:::
 
 El programa recorre cada letra y aumenta `cantidad` cada vez que encuentra una `a`.
 
 La variable `cantidad` comienza en cero y va acumulando el resultado.
 
-### Actividad 7 — En carpeta
+### Actividad
 
-Analiza el programa anterior y completa la tabla:
+::: activity
+
+**1)** **En carpeta:** Analiza el programa anterior y completa la tabla:
 
 | Letra | ¿Es `"a"`? | Valor de `cantidad` |
 | ----- | ---------- | ------------------- |
@@ -281,145 +291,77 @@ Analiza el programa anterior y completa la tabla:
 | n     |            |                     |
 | a     |            |                     |
 
-Luego responde:
+Luego responde: ¿Por qué `cantidad` debe comenzar en 0?
 
-**¿Por qué `cantidad` debe comenzar en 0?**
+**2)** Hacer un programa que pida ingresar una frase y luego una letra. Luego debe mostrar en pantalla cuántas veces aparece esa letra en la frase. Se debe usar un for y una variable que acumula información como en el ejemplo.
 
----
+**3)** Hacer un programa como el anterior pero que en vez de mostrar en pantalla cuantas veces aparece la letra muestre el mensaje "Aparece más de tres veces" si esta afirmación resulta verdadera, en caso contrario que muestre "Aparece 3 veces o menos".
+:::
 
-## 7. Pequeños analizadores
 
-Vamos a construir programas que obtengan información de un texto.
+## 6. Separar los programas en funciones
 
-### Actividad 8 — Contar letras
-
-Escribe una función llamada:
-
-```python
-def count_letter(texto, letra):
-```
-
-Debe recibir un texto y una letra y devolver cuántas veces aparece esa letra.
-
-Por ejemplo:
-
-```python
-resultado = count_letter("banana", "a")
-print(resultado)
-```
-
-debe mostrar:
-
-```text
-3
-```
-
-Prueba también con:
-
-```python
-count_letter("programacion", "o")
-count_letter("Python", "x")
-count_letter("abracadabra", "a")
-```
-
-No utilices todavía métodos especiales para contar. El objetivo es practicar `for`.
-
----
-
-### Actividad 9 — Buscar una letra
-
-Escribe una función:
-
-```python
-def contains_letter(texto, letra):
-```
-
-Debe devolver `True` si la letra aparece en el texto y `False` si no aparece.
-
-Por ejemplo:
-
-```python
-contains_letter("Python", "y")
-```
-
-debe devolver:
-
-```text
-True
-```
-
-y:
-
-```python
-contains_letter("Python", "z")
-```
-
-debe devolver:
-
-```text
-False
-```
-
-**Desafío:** intenta resolverlo recorriendo el texto con `for`.
-
----
-
-## 8. Separar los programas en funciones
+<div hidden>Esto podría ir en una guía anterior</div>
 
 Hasta ahora, probablemente teníamos varios ejercicios dentro del mismo archivo.
 
-Por ejemplo:
+::: example
+
+**Por ejemplo:**
 
 ```python
-print("Ejercicio 1")
+# Ejercicio 1
 
-# programa...
+palabra = "Python"
 
-print("Ejercicio 2")
+for letra in palabra:
+    print(letra)
 
-# programa...
+
+# Ejercicio 2
+
+texto = "banana"
+cantidad = 0
+
+for letra in texto:
+    if letra == "a":
+        cantidad = cantidad + 1
+
+print(cantidad)
 ```
+:::
 
-Al ejecutar el archivo, todos los ejercicios se ejecutan.
-
-Podemos comenzar a organizarlos de otra manera:
+Al ejecutar el archivo, todos los ejercicios se ejecutan y es un lío. Podemos comenzar a organizarlos de otra manera:
 
 ```python
 def ejercicio_1():
-    print("Hola")
+    palabra = "Python"
 
+    for letra in palabra:
+        print(letra)
 
 def ejercicio_2():
-    for i in range(5):
-        print(i)
+    texto = "banana"
+    cantidad = 0
 
+    for letra in texto:
+        if letra == "a":
+            cantidad = cantidad + 1
 
-def ejercicio_3():
-    print("Otro ejercicio")
-
+    print(cantidad)
 
 ejercicio_2()
 ```
 
-En este caso, solamente se ejecuta `ejercicio_2()`.
+Cada ejercicio está definido con `def` con un nombre específico. Cada bloque encabezado por `def` se llama "función". La última línea del programa, en este caso `ejercicio_2()`, no está dentro de ningún bloque `def` y significa que llama a que se ejecute solo esa función. 
 
-Las demás funciones están definidas, pero no son llamadas.
+Cambiando la última línea por `ejercicio_1()` puedo hacer que se llame y ejecute solo esa función.
 
-Para ejecutar otro ejercicio podemos cambiar:
+### Actividad
 
-```python
-ejercicio_2()
-```
+::: activity
 
-por:
-
-```python
-ejercicio_1()
-```
-
-### Actividad 10 — Organizar
-
-Toma dos ejercicios anteriores y colócalos en funciones diferentes.
+Toma los ejercicios de esta guía y colócalos en funciones diferentes, es decir cada uno dentro de un bloque `def` diferente.
 
 Por ejemplo:
 
@@ -437,16 +379,15 @@ ejercicio_1()
 
 Deja solamente **una llamada activa** al final del programa.
 
-Para probar otro ejercicio, comenta la llamada anterior y descomenta la nueva:
-
-```python
-# ejercicio_1()
-ejercicio_2()
-```
-
 Por ahora no es necesario profundizar en cómo funcionan las funciones. Las utilizaremos principalmente para mantener ordenados nuestros programas.
 
----
+:::
+
+::: warning
+Para aprobar esta guía debes mostrar los ejercicios de la carpeta y los que se programan. Además responder en forma oral cualquiera de estas preguntas: ¿Para qué sirve un for? ¿Qué diferencia hay entre `for i in range(10)` y `for i in palabra` (que es i en cada caso)? ¿Para qué es la sangría del for?  
+:::
+
+<div hidden>
 
 ## 9. Proyecto: una primera herramienta para textos
 
@@ -584,8 +525,6 @@ También me parece acertado introducir ya `def ejercicio_1()` / `ejercicio_2()` 
 
 Y la actividad **"El texto secreto"** me parece especialmente útil para lo que venís buscando: empieza a darle al analizador una dimensión lúdica sin obligarte todavía a decidir cuál será el juego final.
 
-
-
 </div>
 
 
@@ -610,7 +549,7 @@ Aquí va el contenido de tu ejemplo. Puedes usar Markdown normal adentro.
 ● Image:
 
 ::: figure
-![](imagen.png){width=400px}
+![caption](imagen.png){width=400px}
 
 <small>Pie (Source)</small>
 :::
