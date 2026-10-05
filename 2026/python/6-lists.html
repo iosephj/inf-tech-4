@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Listas</title>
+  <style>
+
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root {--black: #000000--light-gray-1: #f2f2f2; --light-gray-2: #cccccc; --light-gray-3: #b3b3b3; --mid-gray: #999999; --dark-gray-1: #808080; --dark-gray-2: #666666; --dark-gray-3: #555555; --dark-gray-4: #333333; --dark-gray-5: #222222; --zebra-bg: #f8f8f8; --blue-1: #6495ed; --blue-2: #276cdf; --blue-3: #003366; --blue-4: #2f5597; --blue-5: #184965; --blue-6: #1f4e79; --cyan-1: #7dbed8; --cyan-2: #27a2db; --green-1: #81b524; --red-1: #ec5469; --red-2: #f44336; --rose-1: #ec9998; --gold-1: #df9d43; --orange-1: #fda556; --orange-2: #ff9505; --purple-1: #ff40ff; --purple-2: #d164d7; }:root {--text-color: var(--dark-gray-5); --secondary-text-color: var(--dark-gray-4); --title-color: var(--blue-6); --heading-color: var(--dark-gray-5);--border-color: var(--light-gray-3); --example-border-color: var(--blue-6); --solutions-text-color: var(--dark-gray-1); --warning-color: var(--orange-2); --note-color: var(--dark-gray-2);--error-color: var(--red-2); --figure-caption-color: var(--dark-gray-3); --figure-source-color: var(--dark-gray-2); --background-color: #FFFFFF; --example-background-color: #FFFFFF; }body {font-family: Arial, sans-serif;font-size: 1.3em;color: var(--text-color);line-height: 1.4;margin: auto;padding: 1.5em;}h1 {color: var(--title-color); border-bottom: 1px solid var(--border-color);padding-bottom: 0.3em;}h2 {margin-top: 1.8em;margin-bottom: 0.4em;color: var(--heading-color);}h3 {margin-top: 1.1em;margin-bottom: 0.3em;color: var(--heading-color);}ol {list-style: none;counter-reset: item;margin-left: 0;padding-left: 0.5em; }ol > li {counter-increment: item;}ol > li::before {content: counter(item) ") ";font-weight: bold;}blockquote {margin: 1em 0;padding: 0 15px;color: var(--dark-gray-2);border-left: 4px solid var(--light-gray-2);}table {border-collapse: collapse;width: 100%;margin: 1em 0;}table th, table td {padding: 6px 13px;border: 1px solid var(--light-gray-2);}table th {font-weight: bold;background-color: var(--light-gray-1);}table tr:nth-child(2n) {background-color: var(--zebra-bg);}code {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size: 85%;background-color: rgba(0,0,0,0.04);padding: 0.2em 0.4em;border-radius: 3px;}pre {padding: 16px;overflow: auto;font-size: 85%;line-height: 1.45;background-color: var(--light-gray-1);border-radius: 3px;margin-bottom: 16px;}pre code {background-color: transparent;padding: 0;font-size: 100%;}a {color: var(--blue-6);text-decoration: none;}a:hover {text-decoration: underline;}.example {display: block;background: var(--example-background-color);margin: 0.6em 0;padding-left: 0.6em; border-left: 2px solid var(--example-border-color);}.activity {margin: 0.6em 0;padding-left: 0.6em; }.solutions {display: block;margin-top: 0.6em;font-size: 0.85em; color: var(--solutions-text-color);}.warning {display: block;font-size: 0.8em;color: var(--warning-color);}.note {display: block;margin: 0.6em 0;padding-left: 0.6em; color: var(--note-color);font-size: 0.8em;}.figure {display: block;text-align: center;margin: 1.5em auto;}.figure img {display: block;max-width: 100%;height: auto;margin: 0 auto 0 auto; }.figure small {display: block;font-size: 0.7em;color: var(--figure-caption-color);margin-top: -0.5em }code .kw { color: #000000; font-weight: bold; } code .dt { color: #ed6a43; } code .dv { color: #009999; } code .bn { color: #009999; } code .fl { color: #009999; } code .ch { color: #009999; } code .st { color: #183691; } code .co { color: #969896; font-style: italic; }code .ot { color: #0086b3; } code .al { color: #a61717; font-weight: bold; } code .fu { color: #63a35c; } code .er { color: #a61717; background-color: #e3d2d2; } code .cn { color: #008080; } code .cf { color: #000000; font-weight: bold; } code .op { color: #000000; } code .bu { color: #000000; } code .pp { color: #999999; font-weight: bold; } code .va { color: #008080; } @media print {:root {--text-color: #000000;--secondary-text-color: #333333;--title-color: #000000; --heading-color: #000000;--border-color: #999999;--example-border-color: #555555;--figure-caption-color: #333333;--figure-source-color: #555555;--solutions-text-color: #444444;--note-color: #000000;--warning-color: #000000;--error-color: #000000;--background-color: #FFFFFF;--example-background-color: #FFFFFF;}@page {size: A4;margin: 1.2cm;}body {font-family: Arial, Helvetica, sans-serif;font-size: 10.5pt;line-height: 1.35;color: #000;column-fill: auto; column-count: 2;column-gap: 1cm;}h1 { font-size: 14pt; margin: 0 0 6pt 0; }h2 { font-size: 12pt; margin: 8pt 0 4pt 0; }h3 { font-size: 11pt; margin: 6pt 0 3pt 0; }h1, h2, h3 {break-after: avoid;break-inside: avoid;}p {margin: 0 0 4pt 0;text-align: justify;}blockquote {border-left: 3px solid #666666;color: #333333;margin: 6pt 0;padding-left: 8pt;}ul, ol {margin: 0 0 4pt 12pt;padding: 0;}li { margin-bottom: 2pt; }code, pre {font-family: "Courier New", Courier, monospace;font-size: 9.5pt;background: var(--light-gray-1);padding: 1px 3px;border-radius: 2px;}pre {padding: 6pt;overflow: hidden;break-inside: avoid;}img {max-width: 100%;height: auto;break-inside: avoid;margin: 12pt auto; }table {width: 100%;border-collapse: collapse;font-size: 9.5pt;}th, td {border: 1px solid #000;padding: 3pt;}table tr:nth-child(2n) {background-color: var(--light-gray-1); }nav, footer, .no-print {display: none;}.example,.activity,.solutions,.note,.warning,blockquote {break-inside: avoid;}}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Listas</h1>
+</header>
+<!-- *** GUIDE START *** -->
+<h2 id="contenidos">Contenidos</h2>
+<ol type="1">
+<li><a href="#listas1">¿Para qué sirven las listas?</a></li>
+<li><a href="#listas2">Los elementos de una lista</a></li>
+<li><a href="#listas3">Cambiar elementos</a></li>
+</ol>
+<h2 id="listas1">1. ¿Para qué sirven las listas?</h2>
+<p>Hasta ahora trabajamos con variables que contienen un dato:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Sofia&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">16</span></span></code></pre></div>
+<p>Pero muchas veces necesitamos guardar <strong>varios datos
+relacionados</strong>. Por ejemplo, los nombres de los integrantes de un
+curso:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [<span class="st">&quot;Sofia&quot;</span>, <span class="st">&quot;Mateo&quot;</span>, <span class="st">&quot;Juan&quot;</span>, <span class="st">&quot;Valentina&quot;</span>]</span></code></pre></div>
+<p>Una lista se escribe entre corchetes <code>[</code> <code>]</code> y
+sus elementos se separan mediante comas.</p>
+<p>Una lista puede contener números:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>grades <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">9</span>]</span></code></pre></div>
+<p>o textos:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;computer&quot;</span>, <span class="st">&quot;program&quot;</span>, <span class="st">&quot;list&quot;</span>, <span class="st">&quot;data&quot;</span>]</span></code></pre></div>
+<p>También puede contener datos de distintos tipos:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="st">&quot;Sofia&quot;</span>, <span class="dv">16</span>, <span class="fl">8.5</span>]</span></code></pre></div>
+<h2 id="actividad">Actividad</h2>
+<div class="activity">
+<p>Resolver en la carpeta, sin programar.</p>
+<p><strong>1)</strong> Escribir tres situaciones de la vida cotidiana en
+las que sea necesario guardar varios datos del mismo tipo. Para cada
+situación, indicar qué podría contener la lista.</p>
+<p><strong>2)</strong> Decidir cuáles de las siguientes variables
+podrían representarse mejor mediante una lista:</p>
+<pre class="text"><code>student_name
+students
+age
+temperatures
+favorite_color</code></pre>
+</div>
+<p><a href="#contenidos">↑ Volver al contenido</a></p>
+<h2 id="listas2">2. Los elementos de una lista</h2>
+<p>Los elementos de una lista tienen una posición.</p>
+<div class="example">
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;horse&quot;</span>, <span class="st">&quot;cow&quot;</span>]</span></code></pre></div>
+<p>Las posiciones comienzan en <strong>0</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Índice</th>
+<th>Elemento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td><code>&quot;dog&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td><code>&quot;cat&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><code>&quot;horse&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><code>&quot;cow&quot;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para acceder a un elemento usamos su índice:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(animals[<span class="dv">0</span>])</span></code></pre></div>
+<p>produce:</p>
+<pre class="text"><code>dog</code></pre>
+<p>También podemos guardar un elemento en una variable:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>animal <span class="op">=</span> animals[<span class="dv">2</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(animal)</span></code></pre></div>
+<h3 id="actividad-1">Actividad</h3>
+<div class="activity">
+<p>Hacer en carpeta.</p>
+<p><strong>1)</strong> Sin ejecutar el programa, escribir qué muestra
+cada <code>print</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;yellow&quot;</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colors[<span class="dv">0</span>])</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colors[<span class="dv">2</span>])</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colors[<span class="dv">3</span>])</span></code></pre></div>
+<p><strong>2)</strong> ¿Por qué no existe <code>colors[4]</code>?</p>
+</div>
+<p><a href="#contenidos">↑ Volver al contenido</a></p>
+<h2 id="listas3">3. Cambiar elementos</h2>
+<p>Las listas son modificables.</p>
+<div class="example">
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>colors[<span class="dv">1</span>] <span class="op">=</span> <span class="st">&quot;yellow&quot;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colors)</span></code></pre></div>
+<p>Ahora la lista es:</p>
+<pre class="text"><code>[&quot;red&quot;, &quot;yellow&quot;, &quot;blue&quot;]</code></pre>
+</div>
+<p>Podemos cambiar un elemento indicando su índice y asignándole un
+nuevo valor.</p>
+<h3 id="actividad-2">Actividad</h3>
+<div class="activity">
+<p>Programar en la computadora</p>
+<p><strong>1)</strong> Completar el programa de abajo que resuelve esta
+consigna: Crear y mostrar esta lista
+<code>answers = [&quot;yes&quot;, &quot;no&quot;, &quot;maybe&quot;, &quot;yes&quot;]</code>. Escribir la
+instrucción necesaria para reemplazar <code>&quot;maybe&quot;</code> por
+<code>&quot;unknown&quot;</code> y para cambiar el último elemento para que la
+lista quede: <code>[&quot;yes&quot;, &quot;no&quot;, &quot;unknown&quot;, &quot;no&quot;]</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ponemos un nombre al programa usando def:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejercicio_3_1():</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    answers <span class="op">=</span> [<span class="st">&quot;yes&quot;</span>, <span class="st">&quot;no&quot;</span>, <span class="st">&quot;maybe&quot;</span>, <span class="st">&quot;yes&quot;</span>]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(answers)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    answers[<span class="dv">2</span>]<span class="op">=</span><span class="st">&quot;unknown&quot;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Completarlo ...</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamamos al programa por su nombre para ejecutarlo:</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>ejercicio_3_1()</span></code></pre></div>
+<p><strong>2)</strong> Hacer un programa llamado “ejercicio_3_2” que
+haga esta lista y la muestre: <code>numbers = [10, 20, 30, 40]</code>.
+Luego debe modificar el 10 por el 100 y el 30 por el 300. Finalmente
+mostrar la lista.</p>
+</div>
+<p><a href="#contenidos">↑ Volver al contenido</a></p>
+<div hidden>
+<h2 id="agregar-elementos">4. Agregar elementos</h2>
+<p>Podemos agregar un elemento al final de una lista utilizando
+<code>append()</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>animals.append(<span class="st">&quot;horse&quot;</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(animals)</span></code></pre></div>
+<p>Resultado:</p>
+<pre class="text"><code>[&quot;dog&quot;, &quot;cat&quot;, &quot;horse&quot;]</code></pre>
+<p>Cada vez que usamos <code>append()</code>, la lista aumenta.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> []</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;python&quot;</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;list&quot;</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;program&quot;</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(words)</span></code></pre></div>
+<h3 id="actividad-6-construir-una-lista">Actividad 6 — Construir una
+lista</h3>
+<p>Crear un programa que comience con una lista vacía:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> []</span></code></pre></div>
+<p>y agregue mediante <code>append()</code> cinco palabras relacionadas
+con programación.</p>
+<p>Al final, mostrar la lista completa.</p>
+<p>Después modificar el programa para mostrar también cada una de las
+palabras por separado.</p>
+<hr />
+<h2 id="cuántos-elementos-tiene-una-lista">5. ¿Cuántos elementos tiene
+una lista?</h2>
+<p>La función <code>len()</code> permite conocer la cantidad de
+elementos:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;horse&quot;</span>]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(animals))</span></code></pre></div>
+<p>El resultado es:</p>
+<pre class="text"><code>3</code></pre>
+<p>Es importante distinguir:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(animals)</span></code></pre></div>
+<p>de:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>animals[<span class="dv">0</span>]</span></code></pre></div>
+<p>El primero indica <strong>cuántos elementos hay</strong>.</p>
+<p>El segundo obtiene <strong>un elemento determinado</strong>.</p>
+<h3 id="actividad-7-pensar-antes-de-ejecutar">Actividad 7 — Pensar antes
+de ejecutar</h3>
+<p>Indicar el resultado de cada expresión:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;computer&quot;</span>, <span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;keyboard&quot;</span>, <span class="st">&quot;screen&quot;</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(words)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>words[<span class="dv">0</span>]</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>words[<span class="dv">3</span>]</span></code></pre></div>
+<p>Luego responder:</p>
+<ol type="1">
+<li>¿Cuál es el último índice?</li>
+<li>¿Coincide con <code>len(words)</code>?</li>
+<li>¿Cómo podríamos obtener el último elemento sin escribir directamente
+su índice?</li>
+</ol>
+<hr />
+<h2 id="recorrer-una-lista-con-for">6. Recorrer una lista con
+<code>for</code></h2>
+<p>Una de las principales ventajas de las listas aparece cuando las
+combinamos con <code>for</code>.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;horse&quot;</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(animal)</span></code></pre></div>
+<p>El <code>for</code> toma cada elemento de la lista y lo guarda
+temporalmente en la variable <code>animal</code>.</p>
+<p>El programa muestra:</p>
+<pre class="text"><code>dog
+cat
+horse</code></pre>
+<p>Podemos utilizar cualquier nombre de variable:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(word)</span></code></pre></div>
+<p>La elección del nombre debería ayudar a comprender qué representa
+cada elemento.</p>
+<h3 id="actividad-8-reading-code">Actividad 8 — Reading code</h3>
+<p>Sin ejecutar:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&quot;Ana&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Leo&quot;</span>]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello&quot;</span>, name)</span></code></pre></div>
+<ol type="1">
+<li>¿Cuántas veces se ejecuta <code>print()</code>?</li>
+<li>¿Qué valor tiene <code>name</code> en cada repetición?</li>
+<li>Escribir exactamente qué aparece en pantalla.</li>
+</ol>
+<p>Luego modificar el programa para que diga:</p>
+<pre class="text"><code>Hello, Ana. Welcome to programming!</code></pre>
+<p>y lo mismo para los otros nombres.</p>
+<hr />
+<h2 id="buscar-información-dentro-de-una-lista">7. Buscar información
+dentro de una lista</h2>
+<p>Podemos combinar listas con <code>if</code>.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;python&quot;</span>, <span class="st">&quot;java&quot;</span>, <span class="st">&quot;ruby&quot;</span>, <span class="st">&quot;python&quot;</span>]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> word <span class="op">==</span> <span class="st">&quot;python&quot;</span>:</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Python found!&quot;</span>)</span></code></pre></div>
+<p>El programa revisa los elementos uno por uno y toma una decisión
+cuando encuentra <code>&quot;python&quot;</code>.</p>
+<h3 id="actividad-9-qué-encuentra-el-programa">Actividad 9 — ¿Qué
+encuentra el programa?</h3>
+<p>Indicar qué mostrará:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Found 7&quot;</span>)</span></code></pre></div>
+<p>Después responder:</p>
+<ul>
+<li>¿Cuántas veces aparece el mensaje?</li>
+<li>¿El programa encuentra solamente el primer <code>7</code>?</li>
+<li>¿Qué habría que cambiar para buscar el número <code>9</code>?</li>
+</ul>
+<hr />
+<h2 id="contar-elementos-que-cumplen-una-condición">8. Contar elementos
+que cumplen una condición</h2>
+<p>Una lista y un <code>for</code> también permiten contar
+elementos.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        count <span class="op">=</span> count <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count)</span></code></pre></div>
+<p>La variable <code>count</code> funciona como un contador.</p>
+<p>Cada vez que encuentra un <code>7</code>, aumenta en uno.</p>
+<h3 id="actividad-10-analizar-el-contador">Actividad 10 — Analizar el
+contador</h3>
+<p>Sin ejecutar el programa, completar una tabla indicando cómo cambia
+<code>count</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">number</th>
+<th style="text-align: center;">¿number == 7?</th>
+<th style="text-align: right;">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>Finalmente indicar qué muestra el programa.</p>
+<h3 id="actividad-11-english-programming">Actividad 11 — English +
+programming</h3>
+<p>Complete:</p>
+<blockquote>
+<p>A <strong>list</strong> contains several ______. Each element has an
+______. Python starts counting indexes at ______. <code>append()</code>
+______ an element to the list. <code>len()</code> tells us how ______
+elements there are.</p>
+</blockquote>
+<p>Words:</p>
+<p><code>adds</code> — <code>many</code> — <code>index</code> —
+<code>elements</code> — <code>0</code></p>
+<hr />
+<h2 id="las-listas-y-los-textos">9. Las listas y los textos</h2>
+<p>Una lista también puede contener palabras.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> [<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;easy&quot;</span>, <span class="st">&quot;to&quot;</span>, <span class="st">&quot;learn&quot;</span>]</span></code></pre></div>
+<p>Podemos recorrerla:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> text:</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(word)</span></code></pre></div>
+<p>Pero también podemos hacer preguntas sobre cada palabra.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> text:</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&gt;</span> <span class="dv">4</span>:</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(word)</span></code></pre></div>
+<p>Este programa muestra solamente las palabras que tienen más de cuatro
+caracteres.</p>
+<h3 id="actividad-12-clasificar-palabras">Actividad 12 — Clasificar
+palabras</h3>
+<p>Crear una lista con al menos 8 palabras relacionadas con
+informática.</p>
+<p>Recorrer la lista y mostrar solamente las palabras que tengan más de
+5 caracteres.</p>
+<p>Después modificar el programa para mostrar solamente las palabras que
+tengan <strong>5 caracteres o menos</strong>.</p>
+<hr />
+<h2 id="preparando-un-pequeño-analizador">10. Preparando un pequeño
+analizador</h2>
+<p>Supongamos que tenemos una lista de palabras obtenidas de un
+texto:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;python&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;programming&quot;</span>, <span class="st">&quot;language&quot;</span>]</span></code></pre></div>
+<p>Podemos recorrerla y obtener información.</p>
+<p>Por ejemplo, mostrar las palabras largas:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&gt;=</span> <span class="dv">8</span>:</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(word)</span></code></pre></div>
+<p>Este tipo de procedimiento será importante cuando construyamos
+programas capaces de analizar textos.</p>
+<h3 id="actividad-13-explorador-de-palabras">Actividad 13 — Explorador
+de palabras</h3>
+<p>Crear un programa que tenga una lista de al menos 10 palabras.</p>
+<p>El programa debe recorrer la lista y:</p>
+<ol type="1">
+<li>mostrar las palabras que tengan 6 o más caracteres;</li>
+<li>contar cuántas palabras cumplen esa condición;</li>
+<li>mostrar al final:</li>
+</ol>
+<pre class="text"><code>Long words: X</code></pre>
+<p>donde <code>X</code> sea la cantidad encontrada.</p>
+<p>No es necesario analizar todavía un texto introducido por el
+usuario.</p>
+<p>La intención es comenzar a construir pequeñas herramientas para
+obtener información de un conjunto de palabras.</p>
+<hr />
+<h2 id="desafío-el-detective-de-palabras">11. Desafío — El detective de
+palabras</h2>
+<p>Crear un programa que tenga una lista de palabras.</p>
+<p>El usuario debe ingresar una palabra:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>search <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a word: &quot;</span>)</span></code></pre></div>
+<p>El programa debe recorrer la lista y decir cuántas veces aparece esa
+palabra.</p>
+<p>Por ejemplo, para:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>]</span></code></pre></div>
+<p>si el usuario escribe:</p>
+<pre class="text"><code>cat</code></pre>
+<p>el programa debe mostrar:</p>
+<pre class="text"><code>Occurrences: 3</code></pre>
+<h3 id="condición">Condición</h3>
+<p>No utilizar todavía herramientas que no hayamos estudiado.</p>
+<p>Resolverlo utilizando:</p>
+<ul>
+<li>una lista;</li>
+<li><code>for</code>;</li>
+<li><code>if</code>;</li>
+<li>una variable contador;</li>
+<li><code>input()</code>;</li>
+<li><code>print()</code>.</li>
+</ul>
+<hr />
+<h2 id="desafío-final-una-lista-que-cuenta-una-historia">12. Desafío
+final — Una lista que cuenta una historia</h2>
+<p>Crear una lista de palabras relacionadas con una pequeña
+historia.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>story <span class="op">=</span> [<span class="st">&quot;robot&quot;</span>, <span class="st">&quot;school&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;robot&quot;</span>, <span class="st">&quot;teacher&quot;</span>, <span class="st">&quot;robot&quot;</span>]</span></code></pre></div>
+<p>El programa debe permitir investigar la historia.</p>
+<p>Como mínimo debe:</p>
+<ol type="1">
+<li>mostrar todas las palabras;</li>
+<li>indicar cuántas palabras contiene;</li>
+<li>permitir buscar una palabra;</li>
+<li>indicar cuántas veces aparece;</li>
+<li>mostrar las palabras que tengan 6 o más caracteres.</li>
+</ol>
+<p>Agregar <strong>una función nueva</strong> que el programa pueda
+realizar.</p>
+<p>Pensar especialmente qué información interesante se puede obtener de
+una lista de palabras.</p>
+<h3 id="para-pensar">Para pensar</h3>
+<p>Un analizador de textos no necesariamente tiene que limitarse a
+decir:</p>
+<blockquote>
+<p>“El texto tiene 327 palabras.”</p>
+</blockquote>
+<p>¿Qué otras preguntas interesantes podríamos hacerle a un texto?</p>
+<p>Me gusta especialmente que el <strong>Desafío 1 y el Desafío final ya
+dejan preparado el camino del proyecto</strong>, sin revelar
+necesariamente su diseño final. La progresión queda bastante natural:
+<code>lista → índice → modificar → append → len → for → if + lista → contador → palabras → análisis</code>.</p>
+<p>También evitaría por ahora <code>in</code>, <code>count()</code>,
+<code>sort()</code>, slicing, listas anidadas, etc. Aunque sean útiles,
+<strong>quitarían parte del trabajo que justamente quiero que hagan con
+<code>for</code> + <code>if</code> + contador</strong>, que es lo que
+después necesitarán comprender de verdad.</p>
+</div>
+<!-- *** GUIDE END *** -->
+<!-- *** GUIDE AUXILIARY THINGS *** -->
+<!--
+
+● Sections: example, activity. solutions, figure, warning, note
+
+::: example
+### Ejemplo: Cálculo de derivadas
+Aquí va el contenido de tu ejemplo. Puedes usar Markdown normal adentro.
+:::
+
+
+● Image:
+
+::: figure
+![caption](imagen.png){width=400px}
+
+<small>Pie (Source)</small>
+:::
+
+[⌕](../../images/ ) 
+
+● Videos:
+
+ Change XXX to video-id and put time in seconds
+
+ - Yotube with start point: [Mira este momento clave en el video](https://www.youtube.com/watch?v=XXX&t=123s)
+
+ - Youtubetrimmer with start and end point: [Mirá este momento puntual del video](https://youtubetrimmer.com/view/?v=XXX&start=120&end=150&loop=0)
+
+-->
+</body>
+</html>
