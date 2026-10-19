@@ -94,11 +94,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 </header>
 <!-- *** GUIDE START *** -->
 <h2 id="contenidos">Contenidos</h2>
-<ol type="1">
-<li><a href="#listas1">¿Para qué sirven las listas?</a></li>
-<li><a href="#listas2">Los elementos de una lista</a></li>
-<li><a href="#listas3">Cambiar elementos</a></li>
-</ol>
+<details>
+<summary>
+<strong>1. ¿Para qué sirven las listas?</strong>
+</summary>
 <h2 id="listas1">1. ¿Para qué sirven las listas?</h2>
 <p>Hasta ahora trabajamos con variables que contienen un dato:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Sofia&quot;</span></span>
@@ -118,10 +117,10 @@ sus elementos se separan mediante comas.</p>
 <h2 id="actividad">Actividad</h2>
 <div class="activity">
 <p>Resolver en la carpeta, sin programar.</p>
-<p><strong>1)</strong> Escribir tres situaciones de la vida cotidiana en
+<p><strong>a)</strong> Escribir tres situaciones de la vida cotidiana en
 las que sea necesario guardar varios datos del mismo tipo. Para cada
 situación, indicar qué podría contener la lista.</p>
-<p><strong>2)</strong> Decidir cuáles de las siguientes variables
+<p><strong>b)</strong> Decidir cuáles de las siguientes variables
 podrían representarse mejor mediante una lista:</p>
 <pre class="text"><code>student_name
 students
@@ -129,8 +128,12 @@ age
 temperatures
 favorite_color</code></pre>
 </div>
-<p><a href="#contenidos">↑ Volver al contenido</a></p>
-<h2 id="listas2">2. Los elementos de una lista</h2>
+</details>
+<details>
+<summary>
+<strong>2. Los elementos de una lista</strong>
+</summary>
+<h2 id="los-elementos-de-una-lista">2. Los elementos de una lista</h2>
 <p>Los elementos de una lista tienen una posición.</p>
 <div class="example">
 <p>Por ejemplo:</p>
@@ -173,17 +176,21 @@ favorite_color</code></pre>
 <h3 id="actividad-1">Actividad</h3>
 <div class="activity">
 <p>Hacer en carpeta.</p>
-<p><strong>1)</strong> Sin ejecutar el programa, escribir qué muestra
+<p><strong>a)</strong> Sin ejecutar el programa, escribir qué muestra
 cada <code>print</code>.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;yellow&quot;</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colors[<span class="dv">0</span>])</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colors[<span class="dv">2</span>])</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colors[<span class="dv">3</span>])</span></code></pre></div>
-<p><strong>2)</strong> ¿Por qué no existe <code>colors[4]</code>?</p>
+<p><strong>b)</strong> ¿Por qué no existe <code>colors[4]</code>?</p>
 </div>
-<p><a href="#contenidos">↑ Volver al contenido</a></p>
-<h2 id="listas3">3. Cambiar elementos</h2>
+</details>
+<details>
+<summary>
+<strong>3. Cambiar elementos</strong>
+</summary>
+<h2 id="cambiar-elementos">3. Cambiar elementos</h2>
 <p>Las listas son modificables.</p>
 <div class="example">
 <p>Por ejemplo:</p>
@@ -200,7 +207,7 @@ nuevo valor.</p>
 <h3 id="actividad-2">Actividad</h3>
 <div class="activity">
 <p>Programar en la computadora</p>
-<p><strong>1)</strong> Completar el programa de abajo que resuelve esta
+<p><strong>a)</strong> Completar el programa de abajo que resuelve esta
 consigna: Crear y mostrar esta lista
 <code>answers = [&quot;yes&quot;, &quot;no&quot;, &quot;maybe&quot;, &quot;yes&quot;]</code>. Escribir la
 instrucción necesaria para reemplazar <code>&quot;maybe&quot;</code> por
@@ -216,16 +223,21 @@ lista quede: <code>[&quot;yes&quot;, &quot;no&quot;, &quot;unknown&quot;, &quot;
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamamos al programa por su nombre para ejecutarlo:</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>ejercicio_3_1()</span></code></pre></div>
-<p><strong>2)</strong> Hacer un programa llamado “ejercicio_3_2” que
+<p><strong>b)</strong> Hacer un programa llamado “ejercicio_3_2” que
 haga esta lista y la muestre: <code>numbers = [10, 20, 30, 40]</code>.
 Luego debe modificar el 10 por el 100 y el 30 por el 300. Finalmente
 mostrar la lista.</p>
 </div>
-<p><a href="#contenidos">↑ Volver al contenido</a></p>
-<div hidden>
-<h2 id="agregar-elementos">4. Agregar elementos</h2>
+</details>
+<details>
+<summary>
+<strong>4. Agregar y contar elementos</strong>
+</summary>
+<h2 id="agregar-y-contar-elementos">4. Agregar y contar elementos</h2>
 <p>Podemos agregar un elemento al final de una lista utilizando
 <code>append()</code>:</p>
+<p>Ejemplo:</p>
+<div class="example">
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>animals.append(<span class="st">&quot;horse&quot;</span>)</span>
@@ -234,294 +246,141 @@ mostrar la lista.</p>
 <p>Resultado:</p>
 <pre class="text"><code>[&quot;dog&quot;, &quot;cat&quot;, &quot;horse&quot;]</code></pre>
 <p>Cada vez que usamos <code>append()</code>, la lista aumenta.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> []</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;python&quot;</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;list&quot;</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;program&quot;</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(words)</span></code></pre></div>
-<h3 id="actividad-6-construir-una-lista">Actividad 6 — Construir una
-lista</h3>
-<p>Crear un programa que comience con una lista vacía:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> []</span></code></pre></div>
-<p>y agregue mediante <code>append()</code> cinco palabras relacionadas
-con programación.</p>
-<p>Al final, mostrar la lista completa.</p>
-<p>Después modificar el programa para mostrar también cada una de las
-palabras por separado.</p>
-<hr />
-<h2 id="cuántos-elementos-tiene-una-lista">5. ¿Cuántos elementos tiene
-una lista?</h2>
+</div>
 <p>La función <code>len()</code> permite conocer la cantidad de
 elementos:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;horse&quot;</span>]</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(animals))</span></code></pre></div>
+<p>Ejemplo:</p>
+<div class="example">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;horse&quot;</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(animals))</span></code></pre></div>
 <p>El resultado es:</p>
 <pre class="text"><code>3</code></pre>
-<p>Es importante distinguir:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(animals)</span></code></pre></div>
-<p>de:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>animals[<span class="dv">0</span>]</span></code></pre></div>
-<p>El primero indica <strong>cuántos elementos hay</strong>.</p>
-<p>El segundo obtiene <strong>un elemento determinado</strong>.</p>
-<h3 id="actividad-7-pensar-antes-de-ejecutar">Actividad 7 — Pensar antes
-de ejecutar</h3>
-<p>Indicar el resultado de cada expresión:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;computer&quot;</span>, <span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;keyboard&quot;</span>, <span class="st">&quot;screen&quot;</span>]</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(words)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>words[<span class="dv">0</span>]</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>words[<span class="dv">3</span>]</span></code></pre></div>
-<p>Luego responder:</p>
-<ol type="1">
-<li>¿Cuál es el último índice?</li>
-<li>¿Coincide con <code>len(words)</code>?</li>
-<li>¿Cómo podríamos obtener el último elemento sin escribir directamente
-su índice?</li>
-</ol>
-<hr />
-<h2 id="recorrer-una-lista-con-for">6. Recorrer una lista con
+</div>
+<div hidden>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> []</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;python&quot;</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;list&quot;</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>words.append(<span class="st">&quot;program&quot;</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(words)</span></code></pre></div>
+</div>
+<h3 id="actividades">Actividades</h3>
+<div class="activity">
+<p><strong>a)</strong> Crear un programa que comience con una lista
+vacía con <code>words = []</code>. Luego agregue mediante
+<code>append()</code> cinco palabras relacionadas con programación. Al
+final, mostrar la lista completa.</p>
+<p><strong>b)</strong> Recuerda que cada elemento de un lista tiene un
+índice que empieza en cero. Modificar el programa anterior para mostrar
+también cada una de las palabras por separado, por ejemplo usando
+<code>print(word[0])</code> para mostrar el primer elemento de la lista
+y así sucesivamente.</p>
+<p><strong>c)</strong> Prueba mostrar el último elemento de la lista de
+este modo: <code>print(word[len(word)-1])</code>. ¿Porqué funciona?
+Escríbelo como un comentario en el programa.</p>
+</div>
+</details>
+<details>
+<summary>
+<strong>5. Recorrer una lista con <code>for</code></strong>
+</summary>
+<h2 id="recorrer-una-lista-con-for">5. Recorrer una lista con
 <code>for</code></h2>
 <p>Una de las principales ventajas de las listas aparece cuando las
 combinamos con <code>for</code>.</p>
 <p>Por ejemplo:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;horse&quot;</span>]</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(animal)</span></code></pre></div>
+<div class="example">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;horse&quot;</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(animal)</span></code></pre></div>
 <p>El <code>for</code> toma cada elemento de la lista y lo guarda
 temporalmente en la variable <code>animal</code>.</p>
 <p>El programa muestra:</p>
 <pre class="text"><code>dog
 cat
 horse</code></pre>
+</div>
 <p>Podemos utilizar cualquier nombre de variable:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(word)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(word)</span></code></pre></div>
 <p>La elección del nombre debería ayudar a comprender qué representa
 cada elemento.</p>
-<h3 id="actividad-8-reading-code">Actividad 8 — Reading code</h3>
-<p>Sin ejecutar:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&quot;Ana&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Leo&quot;</span>]</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> names:</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello&quot;</span>, name)</span></code></pre></div>
-<ol type="1">
-<li>¿Cuántas veces se ejecuta <code>print()</code>?</li>
-<li>¿Qué valor tiene <code>name</code> en cada repetición?</li>
-<li>Escribir exactamente qué aparece en pantalla.</li>
-</ol>
-<p>Luego modificar el programa para que diga:</p>
-<pre class="text"><code>Hello, Ana. Welcome to programming!</code></pre>
-<p>y lo mismo para los otros nombres.</p>
-<hr />
-<h2 id="buscar-información-dentro-de-una-lista">7. Buscar información
-dentro de una lista</h2>
-<p>Podemos combinar listas con <code>if</code>.</p>
-<p>Por ejemplo:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;python&quot;</span>, <span class="st">&quot;java&quot;</span>, <span class="st">&quot;ruby&quot;</span>, <span class="st">&quot;python&quot;</span>]</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> word <span class="op">==</span> <span class="st">&quot;python&quot;</span>:</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Python found!&quot;</span>)</span></code></pre></div>
-<p>El programa revisa los elementos uno por uno y toma una decisión
-cuando encuentra <code>&quot;python&quot;</code>.</p>
-<h3 id="actividad-9-qué-encuentra-el-programa">Actividad 9 — ¿Qué
-encuentra el programa?</h3>
-<p>Indicar qué mostrará:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">==</span> <span class="dv">7</span>:</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Found 7&quot;</span>)</span></code></pre></div>
-<p>Después responder:</p>
+<h3 id="actividades-1">Actividades</h3>
+<div class="activity">
+<p><strong>a)</strong> Dado el siguiente programa modificarlo para que
+muestre <code>Hello, Ana. Welcome to programming!</code> y lo mismo para
+los otros nombres.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&quot;Ana&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Leo&quot;</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Hello </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<p><strong>b)</strong> <strong>Buscar información dentro de una
+lista:</strong> El siguiente programa busca la palabra “python”
+recorriendo la lista. Revisa los elementos uno por uno y toma una
+decisión cuando encuentra “python”. Modifícalo de modo que busque si
+están las palabras “pyhon” y “ruby”, ambas, en la lista.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;python&quot;</span>, <span class="st">&quot;java&quot;</span>, <span class="st">&quot;ruby&quot;</span>, <span class="st">&quot;c++&quot;</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> word <span class="op">==</span> <span class="st">&quot;python&quot;</span>:</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Python found!&quot;</span>)</span></code></pre></div>
+<p><strong>c)</strong> Hacer un programa que dada la lista
+<code>numbers = [4, 7, 2, 7, 9]</code> busque el <code>7</code> y
+muestre el mensaje <code>Found 7</code> cada vez que lo encuentre.</p>
+<p><strong>d)</strong> <strong>Contar elementos que cumplen una
+condición:</strong> En el programa de abajo el for recorre la lista y
+cada vez que encuentra el 7 incrementa en 1 la variable
+<code>contador</code>. Modifícalo de modo que cuente las veces que
+aparece el 9.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span> <span class="co"># Empieza en el valor cero</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>        contador <span class="op">=</span> contador <span class="op">+</span> <span class="dv">1</span> <span class="co"># Se incrementa en 1</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(contador)</span></code></pre></div>
+<p><strong>e)</strong> El siguiente programa recorre una lista de
+palabras y usando <code>len</code> para calcular la cantidad de letras
+de una palabra solo muestra las que tienen más de 4 letras. Modíficalo
+para que muestre las palabras que tienen entre 2 y 4 letras. Es decir
+debería mostrar: is, easy, to.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> [<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;easy&quot;</span>, <span class="st">&quot;to&quot;</span>, <span class="st">&quot;learn&quot;</span>]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> text:</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&gt;</span> <span class="dv">4</span>:</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(word)</span></code></pre></div>
+<p><strong>f)</strong> Crear un programa que tenga una lista de al menos
+10 palabras. El programa debe recorrer la lista y debe:</p>
 <ul>
-<li>¿Cuántas veces aparece el mensaje?</li>
-<li>¿El programa encuentra solamente el primer <code>7</code>?</li>
-<li>¿Qué habría que cambiar para buscar el número <code>9</code>?</li>
-</ul>
-<hr />
-<h2 id="contar-elementos-que-cumplen-una-condición">8. Contar elementos
-que cumplen una condición</h2>
-<p>Una lista y un <code>for</code> también permiten contar
-elementos.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">==</span> <span class="dv">7</span>:</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        count <span class="op">=</span> count <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count)</span></code></pre></div>
-<p>La variable <code>count</code> funciona como un contador.</p>
-<p>Cada vez que encuentra un <code>7</code>, aumenta en uno.</p>
-<h3 id="actividad-10-analizar-el-contador">Actividad 10 — Analizar el
-contador</h3>
-<p>Sin ejecutar el programa, completar una tabla indicando cómo cambia
-<code>count</code>:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">number</th>
-<th style="text-align: center;">¿number == 7?</th>
-<th style="text-align: right;">count</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">4</td>
-<td style="text-align: center;"></td>
-<td style="text-align: right;"></td>
-</tr>
-<tr>
-<td style="text-align: right;">7</td>
-<td style="text-align: center;"></td>
-<td style="text-align: right;"></td>
-</tr>
-<tr>
-<td style="text-align: right;">2</td>
-<td style="text-align: center;"></td>
-<td style="text-align: right;"></td>
-</tr>
-<tr>
-<td style="text-align: right;">7</td>
-<td style="text-align: center;"></td>
-<td style="text-align: right;"></td>
-</tr>
-<tr>
-<td style="text-align: right;">9</td>
-<td style="text-align: center;"></td>
-<td style="text-align: right;"></td>
-</tr>
-</tbody>
-</table>
-<p>Finalmente indicar qué muestra el programa.</p>
-<h3 id="actividad-11-english-programming">Actividad 11 — English +
-programming</h3>
-<p>Complete:</p>
-<blockquote>
-<p>A <strong>list</strong> contains several ______. Each element has an
-______. Python starts counting indexes at ______. <code>append()</code>
-______ an element to the list. <code>len()</code> tells us how ______
-elements there are.</p>
-</blockquote>
-<p>Words:</p>
-<p><code>adds</code> — <code>many</code> — <code>index</code> —
-<code>elements</code> — <code>0</code></p>
-<hr />
-<h2 id="las-listas-y-los-textos">9. Las listas y los textos</h2>
-<p>Una lista también puede contener palabras.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> [<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;easy&quot;</span>, <span class="st">&quot;to&quot;</span>, <span class="st">&quot;learn&quot;</span>]</span></code></pre></div>
-<p>Podemos recorrerla:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> text:</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(word)</span></code></pre></div>
-<p>Pero también podemos hacer preguntas sobre cada palabra.</p>
-<p>Por ejemplo:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> text:</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&gt;</span> <span class="dv">4</span>:</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(word)</span></code></pre></div>
-<p>Este programa muestra solamente las palabras que tienen más de cuatro
-caracteres.</p>
-<h3 id="actividad-12-clasificar-palabras">Actividad 12 — Clasificar
-palabras</h3>
-<p>Crear una lista con al menos 8 palabras relacionadas con
-informática.</p>
-<p>Recorrer la lista y mostrar solamente las palabras que tengan más de
-5 caracteres.</p>
-<p>Después modificar el programa para mostrar solamente las palabras que
-tengan <strong>5 caracteres o menos</strong>.</p>
-<hr />
-<h2 id="preparando-un-pequeño-analizador">10. Preparando un pequeño
-analizador</h2>
-<p>Supongamos que tenemos una lista de palabras obtenidas de un
-texto:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;python&quot;</span>, <span class="st">&quot;is&quot;</span>, <span class="st">&quot;a&quot;</span>, <span class="st">&quot;programming&quot;</span>, <span class="st">&quot;language&quot;</span>]</span></code></pre></div>
-<p>Podemos recorrerla y obtener información.</p>
-<p>Por ejemplo, mostrar las palabras largas:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&gt;=</span> <span class="dv">8</span>:</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(word)</span></code></pre></div>
-<p>Este tipo de procedimiento será importante cuando construyamos
-programas capaces de analizar textos.</p>
-<h3 id="actividad-13-explorador-de-palabras">Actividad 13 — Explorador
-de palabras</h3>
-<p>Crear un programa que tenga una lista de al menos 10 palabras.</p>
-<p>El programa debe recorrer la lista y:</p>
-<ol type="1">
 <li>mostrar las palabras que tengan 6 o más caracteres;</li>
 <li>contar cuántas palabras cumplen esa condición;</li>
-<li>mostrar al final:</li>
-</ol>
-<pre class="text"><code>Long words: X</code></pre>
-<p>donde <code>X</code> sea la cantidad encontrada.</p>
-<p>No es necesario analizar todavía un texto introducido por el
-usuario.</p>
-<p>La intención es comenzar a construir pequeñas herramientas para
-obtener información de un conjunto de palabras.</p>
-<hr />
-<h2 id="desafío-el-detective-de-palabras">11. Desafío — El detective de
-palabras</h2>
-<p>Crear un programa que tenga una lista de palabras.</p>
-<p>El usuario debe ingresar una palabra:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>search <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a word: &quot;</span>)</span></code></pre></div>
+<li>mostrar al final: <code>Cantidad de palabras encontradas: X</code>
+donde <code>X</code> sea la cantidad encontrada.</li>
+</ul>
+<p><strong>g)</strong> <strong>Desafío:</strong> Crear un programa que
+tenga una lista de palabras. Pedir al usuario que ingrese una palabra
+con:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>palabra_buscada <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a word: &quot;</span>)</span></code></pre></div>
 <p>El programa debe recorrer la lista y decir cuántas veces aparece esa
 palabra.</p>
 <p>Por ejemplo, para:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>]</span></code></pre></div>
-<p>si el usuario escribe:</p>
-<pre class="text"><code>cat</code></pre>
-<p>el programa debe mostrar:</p>
-<pre class="text"><code>Occurrences: 3</code></pre>
-<h3 id="condición">Condición</h3>
-<p>No utilizar todavía herramientas que no hayamos estudiado.</p>
-<p>Resolverlo utilizando:</p>
-<ul>
-<li>una lista;</li>
-<li><code>for</code>;</li>
-<li><code>if</code>;</li>
-<li>una variable contador;</li>
-<li><code>input()</code>;</li>
-<li><code>print()</code>.</li>
-</ul>
-<hr />
-<h2 id="desafío-final-una-lista-que-cuenta-una-historia">12. Desafío
-final — Una lista que cuenta una historia</h2>
-<p>Crear una lista de palabras relacionadas con una pequeña
-historia.</p>
-<p>Por ejemplo:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>story <span class="op">=</span> [<span class="st">&quot;robot&quot;</span>, <span class="st">&quot;school&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;robot&quot;</span>, <span class="st">&quot;teacher&quot;</span>, <span class="st">&quot;robot&quot;</span>]</span></code></pre></div>
-<p>El programa debe permitir investigar la historia.</p>
-<p>Como mínimo debe:</p>
-<ol type="1">
-<li>mostrar todas las palabras;</li>
-<li>indicar cuántas palabras contiene;</li>
-<li>permitir buscar una palabra;</li>
-<li>indicar cuántas veces aparece;</li>
-<li>mostrar las palabras que tengan 6 o más caracteres.</li>
-</ol>
-<p>Agregar <strong>una función nueva</strong> que el programa pueda
-realizar.</p>
-<p>Pensar especialmente qué información interesante se puede obtener de
-una lista de palabras.</p>
-<h3 id="para-pensar">Para pensar</h3>
-<p>Un analizador de textos no necesariamente tiene que limitarse a
-decir:</p>
-<blockquote>
-<p>“El texto tiene 327 palabras.”</p>
-</blockquote>
-<p>¿Qué otras preguntas interesantes podríamos hacerle a un texto?</p>
-<p>Me gusta especialmente que el <strong>Desafío 1 y el Desafío final ya
-dejan preparado el camino del proyecto</strong>, sin revelar
-necesariamente su diseño final. La progresión queda bastante natural:
-<code>lista → índice → modificar → append → len → for → if + lista → contador → palabras → análisis</code>.</p>
-<p>También evitaría por ahora <code>in</code>, <code>count()</code>,
-<code>sort()</code>, slicing, listas anidadas, etc. Aunque sean útiles,
-<strong>quitarían parte del trabajo que justamente quiero que hagan con
-<code>for</code> + <code>if</code> + contador</strong>, que es lo que
-después necesitarán comprender de verdad.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>]</span></code></pre></div>
+<p>si el usuario escribe <code>cat</code> el programa debe mostrar:
+<code>Occurrences: 3</code></p>
+<p><strong>Condiciones:</strong> No utilizar herramientas que no hayamos
+estudiado. Resolverlo utilizando: una lista; <code>for</code>;
+<code>if</code>; una variable contador; <code>input()</code>;
+<code>print()</code>.</p>
+</div>
+</details>
+<div class="warning">
+<p>Esta guía se aprueba mostrando los programas, los ejercicios de la
+carpeta y explicando el problema <strong>f)</strong> del punto 5.</p>
 </div>
 <!-- *** GUIDE END *** -->
 <!-- *** GUIDE AUXILIARY THINGS *** -->

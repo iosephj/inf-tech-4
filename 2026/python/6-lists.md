@@ -8,10 +8,9 @@ version: "05/10/26"
 
 ## Contenidos
 
-1. [¿Para qué sirven las listas?](#listas1)
-2. [Los elementos de una lista](#listas2)
-3. [Cambiar elementos](#listas3)
+<details>
 
+<summary>**1. ¿Para qué sirven las listas?**</summary>
 
 ## 1. ¿Para qué sirven las listas? {#listas1}
 
@@ -54,9 +53,9 @@ data = ["Sofia", 16, 8.5]
 
 Resolver en la carpeta, sin programar.
 
-**1)** Escribir tres situaciones de la vida cotidiana en las que sea necesario guardar varios datos del mismo tipo. Para cada situación, indicar qué podría contener la lista.
+**a)** Escribir tres situaciones de la vida cotidiana en las que sea necesario guardar varios datos del mismo tipo. Para cada situación, indicar qué podría contener la lista.
 
-**2)** Decidir cuáles de las siguientes variables podrían representarse mejor mediante una lista:
+**b)** Decidir cuáles de las siguientes variables podrían representarse mejor mediante una lista:
 
 ```text
 student_name
@@ -68,10 +67,15 @@ favorite_color
 
 :::
 
-[↑ Volver al contenido](#contenidos)
+</details>
 
 
-## 2. Los elementos de una lista {#listas2}
+
+<details>
+
+<summary>**2. Los elementos de una lista**</summary>
+
+## 2. Los elementos de una lista
 
 Los elementos de una lista tienen una posición.
 
@@ -119,7 +123,7 @@ print(animal)
 
 Hacer en carpeta.
 
-**1)** Sin ejecutar el programa, escribir qué muestra cada `print`.
+**a)** Sin ejecutar el programa, escribir qué muestra cada `print`.
 
 ```python
 colors = ["red", "green", "blue", "yellow"]
@@ -129,14 +133,19 @@ print(colors[2])
 print(colors[3])
 ```
 
-**2)** ¿Por qué no existe `colors[4]`?
+**b)** ¿Por qué no existe `colors[4]`?
 
 :::
 
-[↑ Volver al contenido](#contenidos)
+</details>
 
 
-## 3. Cambiar elementos {#listas3}
+
+<details>
+
+<summary>**3. Cambiar elementos**</summary>
+
+## 3. Cambiar elementos
 
 Las listas son modificables.
 
@@ -168,7 +177,7 @@ Podemos cambiar un elemento indicando su índice y asignándole un nuevo valor.
 
 Programar en la computadora
 
-**1)** Completar el programa de abajo que resuelve esta consigna: Crear y mostrar esta lista `answers = ["yes", "no", "maybe", "yes"]`. Escribir la instrucción necesaria para reemplazar `"maybe"` por `"unknown"` y para cambiar el último elemento para que la lista quede: `["yes", "no", "unknown", "no"]`.
+**a)** Completar el programa de abajo que resuelve esta consigna: Crear y mostrar esta lista `answers = ["yes", "no", "maybe", "yes"]`. Escribir la instrucción necesaria para reemplazar `"maybe"` por `"unknown"` y para cambiar el último elemento para que la lista quede: `["yes", "no", "unknown", "no"]`.
 
 ```python
 # Ponemos un nombre al programa usando def:
@@ -183,17 +192,25 @@ def ejercicio_3_1():
 ejercicio_3_1()
 ``` 
 
-**2)** Hacer un programa llamado "ejercicio_3_2" que haga esta lista y la muestre: `numbers = [10, 20, 30, 40]`. Luego debe modificar el 10 por el 100 y el 30 por el 300. Finalmente mostrar la lista. 
+**b)** Hacer un programa llamado "ejercicio_3_2" que haga esta lista y la muestre: `numbers = [10, 20, 30, 40]`. Luego debe modificar el 10 por el 100 y el 30 por el 300. Finalmente mostrar la lista. 
 
 :::
 
-[↑ Volver al contenido](#contenidos)
+</details>
 
-<div hidden>
 
-## 4. Agregar elementos
+
+<details>
+
+<summary>**4. Agregar y contar elementos**</summary>
+
+## 4. Agregar y contar elementos
 
 Podemos agregar un elemento al final de una lista utilizando `append()`:
+
+Ejemplo:
+
+::: example
 
 ```python
 animals = ["dog", "cat"]
@@ -211,35 +228,13 @@ Resultado:
 
 Cada vez que usamos `append()`, la lista aumenta.
 
-```python
-words = []
-
-words.append("python")
-words.append("list")
-words.append("program")
-
-print(words)
-```
-
-### Actividad 6 — Construir una lista
-
-Crear un programa que comience con una lista vacía:
-
-```python
-words = []
-```
-
-y agregue mediante `append()` cinco palabras relacionadas con programación.
-
-Al final, mostrar la lista completa.
-
-Después modificar el programa para mostrar también cada una de las palabras por separado.
-
----
-
-## 5. ¿Cuántos elementos tiene una lista?
+:::
 
 La función `len()` permite conocer la cantidad de elementos:
+
+Ejemplo:
+
+::: example
 
 ```python
 animals = ["dog", "cat", "horse"]
@@ -253,47 +248,50 @@ El resultado es:
 3
 ```
 
-Es importante distinguir:
+:::
 
+
+
+<div hidden>
 ```python
-len(animals)
+words = []
+
+words.append("python")
+words.append("list")
+words.append("program")
+
+print(words)
 ```
+</div>
 
-de:
 
-```python
-animals[0]
-```
+### Actividades
 
-El primero indica **cuántos elementos hay**.
+::: activity
 
-El segundo obtiene **un elemento determinado**.
+**a)** Crear un programa que comience con una lista vacía con `words = []`. Luego agregue mediante `append()` cinco palabras relacionadas con programación. Al final, mostrar la lista completa. 
 
-### Actividad 7 — Pensar antes de ejecutar
+**b)** Recuerda que cada elemento de un lista tiene un índice que empieza en cero. Modificar el programa anterior para mostrar también cada una de las palabras por separado, por ejemplo usando `print(word[0])` para mostrar el primer elemento de la lista y así sucesivamente.
 
-Indicar el resultado de cada expresión:
+**c)** Prueba mostrar el último elemento de la lista de este modo: `print(word[len(word)-1])`. ¿Porqué funciona? Escríbelo como un comentario en el programa.
 
-```python
-words = ["computer", "mouse", "keyboard", "screen"]
+:::
 
-len(words)
-words[0]
-words[3]
-```
+</details>
 
-Luego responder:
 
-1. ¿Cuál es el último índice?
-2. ¿Coincide con `len(words)`?
-3. ¿Cómo podríamos obtener el último elemento sin escribir directamente su índice?
 
----
+<details>
 
-## 6. Recorrer una lista con `for`
+<summary>**5. Recorrer una lista con `for`**</summary>
+
+## 5. Recorrer una lista con `for`
 
 Una de las principales ventajas de las listas aparece cuando las combinamos con `for`.
 
 Por ejemplo:
+
+::: example
 
 ```python
 animals = ["dog", "cat", "horse"]
@@ -311,6 +309,7 @@ dog
 cat
 horse
 ```
+:::
 
 Podemos utilizar cualquier nombre de variable:
 
@@ -321,204 +320,66 @@ for word in words:
 
 La elección del nombre debería ayudar a comprender qué representa cada elemento.
 
-### Actividad 8 — Reading code
+### Actividades
 
-Sin ejecutar:
+::: activity
+
+**a)** Dado el siguiente programa modificarlo para que muestre `Hello, Ana. Welcome to programming!` y lo mismo para los otros nombres.
 
 ```python
 names = ["Ana", "Tom", "Leo"]
 
 for name in names:
-    print("Hello", name)
+    print(f"Hello {name}")
 ```
 
-1. ¿Cuántas veces se ejecuta `print()`?
-2. ¿Qué valor tiene `name` en cada repetición?
-3. Escribir exactamente qué aparece en pantalla.
-
-Luego modificar el programa para que diga:
-
-```text
-Hello, Ana. Welcome to programming!
-```
-
-y lo mismo para los otros nombres.
-
----
-
-## 7. Buscar información dentro de una lista
-
-Podemos combinar listas con `if`.
-
-Por ejemplo:
+**b)** **Buscar información dentro de una lista:** El siguiente programa busca la palabra "python" recorriendo la lista. Revisa los elementos uno por uno y toma una decisión cuando encuentra "python". Modifícalo de modo que busque si están las palabras "pyhon" y "ruby", ambas, en la lista. 
 
 ```python
-words = ["python", "java", "ruby", "python"]
+words = ["python", "java", "ruby", "c++"]
 
 for word in words:
     if word == "python":
         print("Python found!")
 ```
 
-El programa revisa los elementos uno por uno y toma una decisión cuando encuentra `"python"`.
+**c)** Hacer un programa que dada la lista `numbers = [4, 7, 2, 7, 9]` busque el `7` y muestre el mensaje `Found 7` cada vez que lo encuentre.
 
-### Actividad 9 — ¿Qué encuentra el programa?
-
-Indicar qué mostrará:
+**d)** **Contar elementos que cumplen una condición:** En el programa de abajo el for recorre la lista y cada vez que encuentra el 7 incrementa en 1 la variable `contador`. Modifícalo de modo que cuente las veces que aparece el 9.
 
 ```python
-numbers = [4, 7, 2, 7, 9]
+numbers = [4, 9, 7, 5, 2, 9, 7, 9]
+
+contador = 0 # Empieza en el valor cero
 
 for number in numbers:
     if number == 7:
-        print("Found 7")
+        contador = contador + 1 # Se incrementa en 1
+
+print(contador)
 ```
 
-Después responder:
-
-* ¿Cuántas veces aparece el mensaje?
-* ¿El programa encuentra solamente el primer `7`?
-* ¿Qué habría que cambiar para buscar el número `9`?
-
----
-
-## 8. Contar elementos que cumplen una condición
-
-Una lista y un `for` también permiten contar elementos.
-
-```python
-numbers = [4, 7, 2, 7, 9]
-
-count = 0
-
-for number in numbers:
-    if number == 7:
-        count = count + 1
-
-print(count)
-```
-
-La variable `count` funciona como un contador.
-
-Cada vez que encuentra un `7`, aumenta en uno.
-
-### Actividad 10 — Analizar el contador
-
-Sin ejecutar el programa, completar una tabla indicando cómo cambia `count`:
-
-| number | ¿number == 7? | count |
-| -----: | :-----------: | ----: |
-|      4 |               |       |
-|      7 |               |       |
-|      2 |               |       |
-|      7 |               |       |
-|      9 |               |       |
-
-Finalmente indicar qué muestra el programa.
-
-### Actividad 11 — English + programming
-
-Complete:
-
-> A **list** contains several ______.
-> Each element has an ______.
-> Python starts counting indexes at ______.
-> `append()` ______ an element to the list.
-> `len()` tells us how ______ elements there are.
-
-Words:
-
-`adds` — `many` — `index` — `elements` — `0`
-
----
-
-## 9. Las listas y los textos
-
-Una lista también puede contener palabras.
+**e)** El siguiente programa recorre una lista de palabras y usando `len` para calcular la cantidad de letras de una palabra solo muestra las que tienen más de 4 letras. Modíficalo para que muestre las palabras que tienen entre 2 y 4 letras. Es decir debería mostrar: is, easy, to.
 
 ```python
 text = ["Python", "is", "easy", "to", "learn"]
-```
 
-Podemos recorrerla:
-
-```python
-for word in text:
-    print(word)
-```
-
-Pero también podemos hacer preguntas sobre cada palabra.
-
-Por ejemplo:
-
-```python
 for word in text:
     if len(word) > 4:
         print(word)
 ```
 
-Este programa muestra solamente las palabras que tienen más de cuatro caracteres.
 
-### Actividad 12 — Clasificar palabras
+**f)** Crear un programa que tenga una lista de al menos 10 palabras. El programa debe recorrer la lista y debe:
 
-Crear una lista con al menos 8 palabras relacionadas con informática.
+- mostrar las palabras que tengan 6 o más caracteres;
+- contar cuántas palabras cumplen esa condición;
+- mostrar al final: `Cantidad de palabras encontradas: X` donde `X` sea la cantidad encontrada.
 
-Recorrer la lista y mostrar solamente las palabras que tengan más de 5 caracteres.
-
-Después modificar el programa para mostrar solamente las palabras que tengan **5 caracteres o menos**.
-
----
-
-## 10. Preparando un pequeño analizador
-
-Supongamos que tenemos una lista de palabras obtenidas de un texto:
+**g)** **Desafío:** Crear un programa que tenga una lista de palabras. Pedir al usuario que ingrese una palabra con:
 
 ```python
-words = ["python", "is", "a", "programming", "language"]
-```
-
-Podemos recorrerla y obtener información.
-
-Por ejemplo, mostrar las palabras largas:
-
-```python
-for word in words:
-    if len(word) >= 8:
-        print(word)
-```
-
-Este tipo de procedimiento será importante cuando construyamos programas capaces de analizar textos.
-
-### Actividad 13 — Explorador de palabras
-
-Crear un programa que tenga una lista de al menos 10 palabras.
-
-El programa debe recorrer la lista y:
-
-1. mostrar las palabras que tengan 6 o más caracteres;
-2. contar cuántas palabras cumplen esa condición;
-3. mostrar al final:
-
-```text
-Long words: X
-```
-
-donde `X` sea la cantidad encontrada.
-
-No es necesario analizar todavía un texto introducido por el usuario.
-
-La intención es comenzar a construir pequeñas herramientas para obtener información de un conjunto de palabras.
-
----
-
-## 11. Desafío — El detective de palabras
-
-Crear un programa que tenga una lista de palabras.
-
-El usuario debe ingresar una palabra:
-
-```python
-search = input("Enter a word: ")
+palabra_buscada = input("Enter a word: ")
 ```
 
 El programa debe recorrer la lista y decir cuántas veces aparece esa palabra.
@@ -529,73 +390,17 @@ Por ejemplo, para:
 words = ["cat", "dog", "cat", "bird", "cat", "dog"]
 ```
 
-si el usuario escribe:
+si el usuario escribe `cat` el programa debe mostrar: `Occurrences: 3`
 
-```text
-cat
-```
+**Condiciones:** No utilizar herramientas que no hayamos estudiado. Resolverlo utilizando: una lista; `for`; `if`; una variable contador; `input()`; `print()`.
 
-el programa debe mostrar:
+:::
 
-```text
-Occurrences: 3
-```
+</details>
 
-### Condición
-
-No utilizar todavía herramientas que no hayamos estudiado.
-
-Resolverlo utilizando:
-
-* una lista;
-* `for`;
-* `if`;
-* una variable contador;
-* `input()`;
-* `print()`.
-
----
-
-## 12. Desafío final — Una lista que cuenta una historia
-
-Crear una lista de palabras relacionadas con una pequeña historia.
-
-Por ejemplo:
-
-```python
-story = ["robot", "school", "computer", "robot", "teacher", "robot"]
-```
-
-El programa debe permitir investigar la historia.
-
-Como mínimo debe:
-
-1. mostrar todas las palabras;
-2. indicar cuántas palabras contiene;
-3. permitir buscar una palabra;
-4. indicar cuántas veces aparece;
-5. mostrar las palabras que tengan 6 o más caracteres.
-
-Agregar **una función nueva** que el programa pueda realizar.
-
-Pensar especialmente qué información interesante se puede obtener de una lista de palabras.
-
-### Para pensar
-
-Un analizador de textos no necesariamente tiene que limitarse a decir:
-
-> "El texto tiene 327 palabras."
-
-¿Qué otras preguntas interesantes podríamos hacerle a un texto?
-
-Me gusta especialmente que el **Desafío 1 y el Desafío final ya dejan preparado el camino del proyecto**, sin revelar necesariamente su diseño final. La progresión queda bastante natural: `lista → índice → modificar → append → len → for → if + lista → contador → palabras → análisis`.
-
-También evitaría por ahora `in`, `count()`, `sort()`, slicing, listas anidadas, etc. Aunque sean útiles, **quitarían parte del trabajo que justamente quiero que hagan con `for` + `if` + contador**, que es lo que después necesitarán comprender de verdad.
-
-</div>
-
-
-
+::: warning
+Esta guía se aprueba mostrando los programas, los ejercicios de la carpeta y explicando el problema **f)** del punto 5.
+:::
 
 <!-- *** GUIDE END *** -->
 
