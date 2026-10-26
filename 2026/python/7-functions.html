@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Funciones</title>
+  <style>
+
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root {--black: #000000--light-gray-1: #f2f2f2; --light-gray-2: #cccccc; --light-gray-3: #b3b3b3; --mid-gray: #999999; --dark-gray-1: #808080; --dark-gray-2: #666666; --dark-gray-3: #555555; --dark-gray-4: #333333; --dark-gray-5: #222222; --zebra-bg: #f8f8f8; --blue-1: #6495ed; --blue-2: #276cdf; --blue-3: #003366; --blue-4: #2f5597; --blue-5: #184965; --blue-6: #1f4e79; --cyan-1: #7dbed8; --cyan-2: #27a2db; --green-1: #81b524; --red-1: #ec5469; --red-2: #f44336; --rose-1: #ec9998; --gold-1: #df9d43; --orange-1: #fda556; --orange-2: #ff9505; --purple-1: #ff40ff; --purple-2: #d164d7; }:root {--text-color: var(--dark-gray-5); --secondary-text-color: var(--dark-gray-4); --title-color: var(--blue-6); --heading-color: var(--dark-gray-5);--border-color: var(--light-gray-3); --example-border-color: var(--blue-6); --solutions-text-color: var(--dark-gray-1); --warning-color: var(--orange-2); --note-color: var(--dark-gray-2);--error-color: var(--red-2); --figure-caption-color: var(--dark-gray-3); --figure-source-color: var(--dark-gray-2); --background-color: #FFFFFF; --example-background-color: #FFFFFF; }body {font-family: Arial, sans-serif;font-size: 1.3em;color: var(--text-color);line-height: 1.4;margin: auto;padding: 1.5em;}h1 {color: var(--title-color); border-bottom: 1px solid var(--border-color);padding-bottom: 0.3em;}h2 {margin-top: 1.8em;margin-bottom: 0.4em;color: var(--heading-color);}h3 {margin-top: 1.1em;margin-bottom: 0.3em;color: var(--heading-color);}ol {list-style: none;counter-reset: item;margin-left: 0;padding-left: 0.5em; }ol > li {counter-increment: item;}ol > li::before {content: counter(item) ") ";font-weight: bold;}blockquote {margin: 1em 0;padding: 0 15px;color: var(--dark-gray-2);border-left: 4px solid var(--light-gray-2);}table {border-collapse: collapse;width: 100%;margin: 1em 0;}table th, table td {padding: 6px 13px;border: 1px solid var(--light-gray-2);}table th {font-weight: bold;background-color: var(--light-gray-1);}table tr:nth-child(2n) {background-color: var(--zebra-bg);}code {font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size: 85%;background-color: rgba(0,0,0,0.04);padding: 0.2em 0.4em;border-radius: 3px;}pre {padding: 16px;overflow: auto;font-size: 85%;line-height: 1.45;background-color: var(--light-gray-1);border-radius: 3px;margin-bottom: 16px;}pre code {background-color: transparent;padding: 0;font-size: 100%;}a {color: var(--blue-6);text-decoration: none;}a:hover {text-decoration: underline;}.example {display: block;background: var(--example-background-color);margin: 0.6em 0;padding-left: 0.6em; border-left: 2px solid var(--example-border-color);}.activity {margin: 0.6em 0;padding-left: 0.6em; }.solutions {display: block;margin-top: 0.6em;font-size: 0.85em; color: var(--solutions-text-color);}.warning {display: block;font-size: 0.8em;color: var(--warning-color);}.note {display: block;margin: 0.6em 0;padding-left: 0.6em; color: var(--note-color);font-size: 0.8em;}.figure {display: block;text-align: center;margin: 1.5em auto;}.figure img {display: block;max-width: 100%;height: auto;margin: 0 auto 0 auto; }.figure small {display: block;font-size: 0.7em;color: var(--figure-caption-color);margin-top: -0.5em }code .kw { color: #000000; font-weight: bold; } code .dt { color: #ed6a43; } code .dv { color: #009999; } code .bn { color: #009999; } code .fl { color: #009999; } code .ch { color: #009999; } code .st { color: #183691; } code .co { color: #969896; font-style: italic; }code .ot { color: #0086b3; } code .al { color: #a61717; font-weight: bold; } code .fu { color: #63a35c; } code .er { color: #a61717; background-color: #e3d2d2; } code .cn { color: #008080; } code .cf { color: #000000; font-weight: bold; } code .op { color: #000000; } code .bu { color: #000000; } code .pp { color: #999999; font-weight: bold; } code .va { color: #008080; } @media print {:root {--text-color: #000000;--secondary-text-color: #333333;--title-color: #000000; --heading-color: #000000;--border-color: #999999;--example-border-color: #555555;--figure-caption-color: #333333;--figure-source-color: #555555;--solutions-text-color: #444444;--note-color: #000000;--warning-color: #000000;--error-color: #000000;--background-color: #FFFFFF;--example-background-color: #FFFFFF;}@page {size: A4;margin: 1.2cm;}body {font-family: Arial, Helvetica, sans-serif;font-size: 10.5pt;line-height: 1.35;color: #000;column-fill: auto; column-count: 2;column-gap: 1cm;}h1 { font-size: 14pt; margin: 0 0 6pt 0; }h2 { font-size: 12pt; margin: 8pt 0 4pt 0; }h3 { font-size: 11pt; margin: 6pt 0 3pt 0; }h1, h2, h3 {break-after: avoid;break-inside: avoid;}p {margin: 0 0 4pt 0;text-align: justify;}blockquote {border-left: 3px solid #666666;color: #333333;margin: 6pt 0;padding-left: 8pt;}ul, ol {margin: 0 0 4pt 12pt;padding: 0;}li { margin-bottom: 2pt; }code, pre {font-family: "Courier New", Courier, monospace;font-size: 9.5pt;background: var(--light-gray-1);padding: 1px 3px;border-radius: 2px;}pre {padding: 6pt;overflow: hidden;break-inside: avoid;}img {max-width: 100%;height: auto;break-inside: avoid;margin: 12pt auto; }table {width: 100%;border-collapse: collapse;font-size: 9.5pt;}th, td {border: 1px solid #000;padding: 3pt;}table tr:nth-child(2n) {background-color: var(--light-gray-1); }nav, footer, .no-print {display: none;}.example,.activity,.solutions,.note,.warning,blockquote {break-inside: avoid;}}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Funciones</h1>
+</header>
+<!-- *** GUIDE START *** -->
+<h2 id="contenidos">Contenidos</h2>
+<details>
+<summary>
+<strong>1. ¿Para qué sirven las funciones?</strong>
+</summary>
+<h2 id="para-qué-sirven-las-funciones">1. ¿Para qué sirven las
+funciones?</h2>
+<p>Cuando escribimos un programa, podemos encontrarnos con instrucciones
+que realizan una tarea determinada. Por ejemplo, contar cuántas letras
+tiene una palabra, calcular un puntaje o mostrar un mensaje.</p>
+<p>Si el programa crece, escribir todas las instrucciones una detrás de
+otra puede volverlo difícil de leer y modificar.</p>
+<p>Las <strong>funciones</strong> permiten agrupar instrucciones que
+realizan una tarea y darles un nombre. Después, podemos utilizar ese
+nombre para ejecutar las instrucciones cuando las necesitemos.</p>
+<p>Observá el siguiente programa:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span></code></pre></div>
+<p>El mensaje se repite tres veces. Podemos organizarlo mediante una
+función:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_bienvenida():</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span></code></pre></div>
+<p>Analicemos las partes:</p>
+<ul>
+<li><code>def</code> indica que estamos definiendo una función.</li>
+<li><code>mostrar_bienvenida</code> es el nombre que elegimos para la
+función.</li>
+<li>Los paréntesis <code>()</code> aparecen después del nombre.</li>
+<li>Las instrucciones que pertenecen a la función se escriben con
+sangría.</li>
+<li><code>mostrar_bienvenida()</code> es una llamada a la función: hace
+que se ejecuten sus instrucciones.</li>
+</ul>
+<p><strong>Importante:</strong> definir una función no significa
+ejecutarla. Las instrucciones se ejecutan cuando llamamos a la
+función.</p>
+<h3 id="actividades">Actividades</h3>
+<div class="activity">
+<p><strong>a)</strong> <strong>Programar.</strong> Hacer el ejemplo en
+Python, prueba de llamar a la función distintas cantidades de veces.</p>
+<p><strong>b)</strong> <strong>En carpeta.</strong> Respondé con tus
+palabras:</p>
+<ul>
+<li><em>b1.</em> ¿Qué problema puede aparecer cuando un programa tiene
+muchas instrucciones repetidas?</li>
+<li><em>b2.</em> ¿Qué significa definir una función?</li>
+<li><em>b3.</em> ¿Qué diferencia hay entre definir una función y
+llamarla?</li>
+<li><em>b4.</em> ¿Para qué sirve la sangría dentro de una función?</li>
+</ul>
+<div hidden>
+<p><strong>3. En carpeta.</strong> Vocabulario en inglés.** Completá el
+diálogo con las palabras del recuadro. Cada palabra se utiliza una sola
+vez.</p>
+<p><code>call — define — function — repeat</code></p>
+<p><strong>Alex:</strong> I need to show the same message several times.
+Should I copy the instruction?</p>
+<p><strong>Sam:</strong> Not necessarily. You can create a __________
+that contains the instruction.</p>
+<p><strong>Alex:</strong> How do I create it?</p>
+<p><strong>Sam:</strong> You use <code>def</code> to __________ the
+function.</p>
+<p><strong>Alex:</strong> And how do I execute it?</p>
+<p><strong>Sam:</strong> You __________ it by writing its name followed
+by parentheses.</p>
+<p><strong>Alex:</strong> Great! Now I can __________ the task without
+copying the instructions.</p>
+</div>
+<p><strong>c)</strong> <strong>En carpeta.</strong> Observá el
+programa:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_mensaje():</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Find the hidden word!&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The game starts.&quot;</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>mostrar_mensaje()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Good luck!&quot;</span>)</span></code></pre></div>
+<ul>
+<li><em>c1.</em> ¿Qué sucedería si elimináramos la línea
+<code>mostrar_mensaje()</code>?</li>
+<li><em>c2.</em> Modificá el programa para que el mensaje de la función
+aparezca dos veces.</li>
+</ul>
+<p><strong>d) Programación.</strong> Copia el programa del punto
+anterior en el IDLE. Ejecútalo. Agrega otra función inventada por vos
+con otro mensaje que aparezca abajo de “Find the hidden world”</p>
+</div>
+</details>
+<p>Esta guía continuará.</p>
+<section id="guía-de-aprendizaje-funciones-en-python" hidden>
+<h1>Guía de aprendizaje: Funciones en Python</h1>
+<p><strong>4.º año de secundaria — Programación</strong></p>
+<h2 id="para-qué-sirven-las-funciones-1">1. ¿Para qué sirven las
+funciones?</h2>
+<p>Cuando escribimos un programa, podemos encontrarnos con instrucciones
+que realizan una tarea determinada. Por ejemplo, contar cuántas letras
+tiene una palabra, calcular un puntaje o mostrar un mensaje.</p>
+<p>Si el programa crece, escribir todas las instrucciones una detrás de
+otra puede volverlo difícil de leer y modificar.</p>
+<p>Las <strong>funciones</strong> permiten agrupar instrucciones que
+realizan una tarea y darles un nombre. Después, podemos utilizar ese
+nombre para ejecutar las instrucciones cuando las necesitemos.</p>
+<p>Observá el siguiente programa:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span></code></pre></div>
+<p>El mensaje se repite tres veces. Podemos organizarlo mediante una
+función:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_bienvenida():</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span></code></pre></div>
+<p>Analicemos las partes:</p>
+<ul>
+<li><code>def</code> indica que estamos definiendo una función.</li>
+<li><code>mostrar_bienvenida</code> es el nombre que elegimos para la
+función.</li>
+<li>Los paréntesis <code>()</code> aparecen después del nombre.</li>
+<li>Las instrucciones que pertenecen a la función se escriben con
+sangría.</li>
+<li><code>mostrar_bienvenida()</code> es una llamada a la función: hace
+que se ejecuten sus instrucciones.</li>
+</ul>
+<p><strong>Importante:</strong> definir una función no significa
+ejecutarla. Las instrucciones se ejecutan cuando llamamos a la
+función.</p>
+<h3 id="actividades-1">Actividades</h3>
+<p><strong>1. En carpeta.</strong> Respondé con tus palabras:</p>
+<ol type="a">
+<li><p>¿Qué problema puede aparecer cuando un programa tiene muchas
+instrucciones repetidas?</p></li>
+<li><p>¿Qué significa definir una función?</p></li>
+<li><p>¿Qué diferencia hay entre definir una función y
+llamarla?</p></li>
+<li><p>¿Para qué sirve la sangría dentro de una función?</p></li>
+</ol>
+<p><strong>2. En carpeta.</strong> Un compañero afirma: «Si escribo una
+función, Python ejecuta inmediatamente todo lo que contiene».</p>
+<p>¿Es correcta su afirmación? Explicá por qué y utilizá el ejemplo de
+la bienvenida para justificar tu respuesta.</p>
+<p><strong>3. En carpeta. Vocabulario en inglés.</strong> Completá el
+diálogo con las palabras del recuadro. Cada palabra se utiliza una sola
+vez.</p>
+<p><code>call — define — function — repeat</code></p>
+<p><strong>Alex:</strong> I need to show the same message several times.
+Should I copy the instruction?</p>
+<p><strong>Sam:</strong> Not necessarily. You can create a __________
+that contains the instruction.</p>
+<p><strong>Alex:</strong> How do I create it?</p>
+<p><strong>Sam:</strong> You use <code>def</code> to __________ the
+function.</p>
+<p><strong>Alex:</strong> And how do I execute it?</p>
+<p><strong>Sam:</strong> You __________ it by writing its name followed
+by parentheses.</p>
+<p><strong>Alex:</strong> Great! Now I can __________ the task without
+copying the instructions.</p>
+<p><strong>4. En carpeta.</strong> Observá el programa:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_mensaje():</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Find the hidden word!&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The game starts.&quot;</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>mostrar_mensaje()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Good luck!&quot;</span>)</span></code></pre></div>
+<ol type="a">
+<li><p>¿Qué aparece en pantalla?</p></li>
+<li><p>¿Cuántas veces se ejecuta el contenido de
+<code>mostrar_mensaje</code>?</p></li>
+<li><p>¿Qué sucedería si elimináramos la línea
+<code>mostrar_mensaje()</code>?</p></li>
+<li><p>Modificá el programa para que el mensaje de la función aparezca
+dos veces, sin copiar su contenido.</p></li>
+</ol>
+<p><strong>5. Programación.</strong> Creá un archivo llamado
+<code>funciones.py</code> en IDLE.</p>
+<p>Escribí una función llamada <code>mostrar_reglas()</code> que muestre
+tres reglas de un juego de palabras. Después, llamá a la función para
+que aparezcan las reglas en pantalla.</p>
+<p>Las reglas pueden ser inventadas por vos.</p>
+<hr />
+<h2 id="funciones-que-reciben-datos">2. Funciones que reciben datos</h2>
+<p>Una función puede necesitar información para realizar su tarea. Por
+ejemplo, para saludar a una persona, necesitamos conocer su nombre.</p>
+<p>Podemos escribir:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(nombre):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Hello, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Sofia&quot;</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Lucas&quot;</span>)</span></code></pre></div>
+<p>El resultado será:</p>
+<pre class="text"><code>Hello, Sofia!
+Hello, Lucas!</code></pre>
+<p>En este ejemplo, <code>nombre</code> es un
+<strong>parámetro</strong>. Es una variable que recibe el dato que le
+proporcionamos al llamar a la función.</p>
+<p>Cuando escribimos <code>saludar(&quot;Sofia&quot;)</code>, el texto
+<code>&quot;Sofia&quot;</code> se utiliza como valor del parámetro
+<code>nombre</code> durante esa llamada.</p>
+<p>También podemos usar funciones que reciban números:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_puntaje(puntos):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Your score is </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss">.&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">10</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">25</span>)</span></code></pre></div>
+<p>La misma función permite mostrar distintos puntajes sin modificar su
+definición.</p>
+<p>Una función puede recibir más de un dato:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_palabra(palabra, puntos):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The word &#39;</span><span class="sc">{</span>palabra<span class="sc">}</span><span class="ss">&#39; is worth </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> points.&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;robot&quot;</span>, <span class="dv">5</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;planet&quot;</span>, <span class="dv">10</span>)</span></code></pre></div>
+<p>Los argumentos se escriben en el mismo orden que los parámetros
+correspondientes.</p>
+<h3 id="actividades-2">Actividades</h3>
+<p><strong>6. En carpeta.</strong> Observá la siguiente función:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_pista(palabra):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Clue: the word is </span><span class="sc">{</span><span class="bu">len</span>(palabra)<span class="sc">}</span><span class="ss"> letters long.&quot;</span>)</span></code></pre></div>
+<ol type="a">
+<li><p>¿Cuál es el nombre de la función?</p></li>
+<li><p>¿Cuál es su parámetro?</p></li>
+<li><p>¿Qué información necesita para mostrar una pista?</p></li>
+<li><p>¿Qué ocurriría si la llamáramos con
+<code>mostrar_pista(&quot;school&quot;)</code>?</p></li>
+</ol>
+<p><strong>7. En carpeta.</strong> Analizá las llamadas a esta
+función:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_puntos(aciertos, bonus):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(aciertos <span class="op">*</span> <span class="dv">10</span> <span class="op">+</span> bonus)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">4</span>, <span class="dv">10</span>)</span></code></pre></div>
+<ol type="a">
+<li><p>Predecí qué resultado produce cada llamada.</p></li>
+<li><p>¿Qué función cumple cada parámetro?</p></li>
+<li><p>¿Por qué no es necesario escribir tres funciones
+diferentes?</p></li>
+</ol>
+<p><strong>8. En carpeta. Vocabulario en inglés.</strong> Leé el diálogo
+y completá los espacios con las palabras del recuadro.</p>
+<p><code>argument — input — parameter — value</code></p>
+<p><strong>Mia:</strong> My function needs a word to analyze. How can I
+give it that information?</p>
+<p><strong>Leo:</strong> You can use a __________ in the function
+definition.</p>
+<p><strong>Mia:</strong> Is the word I provide when I call the function
+also called a parameter?</p>
+<p><strong>Leo:</strong> The actual data you provide is an __________,
+also called an argument in this context.</p>
+<p><strong>Mia:</strong> So the parameter receives the __________
+provided by the argument?</p>
+<p><strong>Leo:</strong> Exactly! The function uses that information as
+its __________.</p>
+<p><strong>9. Programación.</strong> Escribí una función llamada
+<code>mostrar_palabra(palabra)</code> que reciba una palabra y
+muestre:</p>
+<ul>
+<li>La palabra recibida.</li>
+<li>La cantidad de letras que tiene.</li>
+<li>Una invitación a descubrir una pista.</li>
+</ul>
+<p>Llamá a la función al menos tres veces con palabras diferentes.</p>
+<p>Por ejemplo, podés utilizar palabras relacionadas con animales,
+tecnología o deportes.</p>
+<p><strong>10. Programación.</strong> Creá una función llamada
+<code>comparar_palabras(palabra1, palabra2)</code> que reciba dos
+palabras y muestre ambas en una misma oración.</p>
+<p>Por ejemplo, al llamarla con <code>&quot;gato&quot;</code> y
+<code>&quot;perro&quot;</code>, debería mostrar:</p>
+<pre class="text"><code>The words are gato and perro.</code></pre>
+<p>Probá la función con tres pares de palabras diferentes.</p>
+<hr />
+<h2 id="funciones-que-devuelven-un-resultado-return">3. Funciones que
+devuelven un resultado: <code>return</code></h2>
+<p>Hasta ahora, las funciones que escribimos mostraban información en
+pantalla mediante <code>print</code>. Sin embargo, hay situaciones en
+las que necesitamos que una función calcule un resultado para que otra
+parte del programa pueda utilizarlo.</p>
+<p>Para eso usamos <code>return</code>.</p>
+<p>Observá el siguiente ejemplo:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_letras(palabra):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(palabra)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>cantidad <span class="op">=</span> contar_letras(<span class="st">&quot;aventura&quot;</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cantidad)</span></code></pre></div>
+<p>El programa muestra:</p>
+<pre class="text"><code>8</code></pre>
+<p>La función <code>contar_letras</code> recibe una palabra y devuelve
+la cantidad de caracteres que tiene. El resultado se guarda en la
+variable <code>cantidad</code>.</p>
+<p>La instrucción <code>return</code> devuelve el resultado al lugar
+desde el que se llamó a la función. Además, finaliza la ejecución de esa
+llamada.</p>
+<h3 id="diferencia-entre-print-y-return">Diferencia entre
+<code>print</code> y <code>return</code></h3>
+<p>Observá los dos ejemplos:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_a(palabra):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(palabra.count(<span class="st">&quot;a&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_cantidad_a(palabra):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> palabra.count(<span class="st">&quot;a&quot;</span>)</span></code></pre></div>
+<p>La primera función muestra un resultado, pero no lo devuelve para que
+podamos guardarlo en una variable.</p>
+<p>La segunda función devuelve el resultado, por lo que podemos
+utilizarlo en otras operaciones.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cantidad <span class="op">=</span> obtener_cantidad_a(<span class="st">&quot;banana&quot;</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cantidad <span class="op">+</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>El resultado será <code>5</code>, porque <code>&quot;banana&quot;</code>
+contiene tres letras <code>a</code> y luego sumamos dos.</p>
+<p><strong>Para recordar:</strong></p>
+<ul>
+<li><code>print</code>: muestra información en pantalla.</li>
+<li><code>return</code>: devuelve un resultado que el programa puede
+utilizar.</li>
+</ul>
+<p>No todas las funciones necesitan devolver un resultado. Algunas solo
+realizan una tarea, como mostrar un mensaje.</p>
+<h3 id="actividades-3">Actividades</h3>
+<p><strong>11. En carpeta.</strong> Explicá la diferencia entre
+<code>print</code> y <code>return</code>. Para justificar tu respuesta,
+indicá en cuál de los siguientes casos resulta más conveniente utilizar
+cada uno:</p>
+<ol type="a">
+<li><p>Mostrar las reglas de un juego.</p></li>
+<li><p>Calcular la cantidad de letras de una palabra para utilizarla
+después.</p></li>
+<li><p>Mostrar un mensaje de bienvenida.</p></li>
+<li><p>Calcular el puntaje de una ronda para sumarlo al puntaje
+total.</p></li>
+</ol>
+<p><strong>12. En carpeta.</strong> Analizá el programa y respondé:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> doble(numero):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numero <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> doble(<span class="dv">7</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doble(<span class="dv">4</span>))</span></code></pre></div>
+<ol type="a">
+<li><p>¿Qué aparece en pantalla?</p></li>
+<li><p>¿Qué valor se guarda en <code>resultado</code>?</p></li>
+<li><p>¿Cuántas veces se llama a la función?</p></li>
+<li><p>¿Por qué se puede utilizar <code>doble(4)</code> directamente
+dentro de <code>print</code>?</p></li>
+</ol>
+<p><strong>13. En carpeta.</strong> Un alumno escribió:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar(a, b):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a <span class="op">+</span> b)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> sumar(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado <span class="op">+</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>El alumno espera que el programa muestre <code>17</code>, pero el
+programa no funciona como espera.</p>
+<ol type="a">
+<li><p>Explicá qué problema tiene.</p></li>
+<li><p>Modificá la función para que el resultado de la suma pueda
+guardarse en <code>resultado</code>.</p></li>
+<li><p>¿Qué diferencia hay entre mostrar el resultado de una suma y
+devolverlo?</p></li>
+</ol>
+<p><strong>14. Programación.</strong> Creá una función llamada
+<code>contar_vocales(texto)</code> que reciba un texto y devuelva
+cuántas vocales contiene.</p>
+<p>Podés utilizar un ciclo <code>for</code> y una condición
+<code>if</code> dentro de la función.</p>
+<p>Después, llamá a la función con distintos textos y mostrá los
+resultados.</p>
+<p>Por ejemplo, con el texto <code>&quot;hola mundo&quot;</code>, la función
+debería devolver <code>4</code>.</p>
+<p><strong>15. Programación.</strong> Creá una función llamada
+<code>calcular_puntaje(palabra)</code> que devuelva un puntaje según la
+cantidad de letras de una palabra.</p>
+<p>La regla será sencilla: cada letra vale 2 puntos.</p>
+<p>Después, utilizá el resultado para mostrar un mensaje como el
+siguiente:</p>
+<pre class="text"><code>The word &quot;planet&quot; earns 12 points.</code></pre>
+<p>Probá la función con diferentes palabras.</p>
+<hr />
+<h2 id="dividir-un-problema-en-varias-funciones">4. Dividir un problema
+en varias funciones</h2>
+<p>La principal ventaja de las funciones aparece cuando un programa
+tiene varias tareas relacionadas entre sí.</p>
+<p>Imaginemos un juego en el que el participante debe descubrir una
+palabra secreta. El programa necesita:</p>
+<ul>
+<li>Mostrar las instrucciones.</li>
+<li>Contar las letras de una palabra.</li>
+<li>Calcular el puntaje.</li>
+<li>Mostrar el resultado.</li>
+</ul>
+<p>Podemos organizar el código en distintas funciones:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_instrucciones():</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Guess the secret word!&quot;</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_letras(palabra):</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(palabra)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_puntaje(palabra):</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> contar_letras(palabra) <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_resultado(palabra):</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    puntos <span class="op">=</span> calcular_puntaje(palabra)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The word has </span><span class="sc">{</span>contar_letras(palabra)<span class="sc">}</span><span class="ss"> letters.&quot;</span>)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;You earn </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> points.&quot;</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>mostrar_instrucciones()</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>mostrar_resultado(<span class="st">&quot;robot&quot;</span>)</span></code></pre></div>
+<p>En este programa, cada función tiene una responsabilidad
+concreta.</p>
+<p>Además, una función puede llamar a otra. Por ejemplo,
+<code>mostrar_resultado</code> utiliza <code>calcular_puntaje</code> y
+<code>contar_letras</code>.</p>
+<p>Esto permite construir programas más grandes a partir de tareas
+pequeñas.</p>
+<p>No es necesario que cada función tenga una sola línea, ni que todos
+los programas estén divididos en una gran cantidad de funciones. La idea
+es separar las tareas que conviene identificar y reutilizar.</p>
+<h3 id="actividades-4">Actividades</h3>
+<p><strong>16. En carpeta.</strong> Analizá el programa anterior.</p>
+<ol type="a">
+<li><p>¿Qué función muestra las instrucciones?</p></li>
+<li><p>¿Qué función devuelve la cantidad de letras?</p></li>
+<li><p>¿Qué función calcula el puntaje?</p></li>
+<li><p>¿Qué función se encarga de mostrar el resultado final?</p></li>
+<li><p>Si quisiéramos cambiar la regla de puntaje para que cada letra
+valiera 5 puntos, ¿qué función habría que modificar?</p></li>
+<li><p>¿Por qué esta organización facilita los cambios?</p></li>
+</ol>
+<p><strong>17. En carpeta.</strong> Leé el siguiente programa:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar(a, b):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiplicar_por_dos(numero):</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sumar(numero, numero)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> multiplicar_por_dos(<span class="dv">6</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div>
+<ol type="a">
+<li><p>Seguí la ejecución paso a paso y predecí el resultado.</p></li>
+<li><p>¿Qué función llama a otra función?</p></li>
+<li><p>¿Por qué <code>multiplicar_por_dos</code> no necesita realizar
+directamente la operación <code>numero * 2</code>?</p></li>
+<li><p>¿Qué ventaja tiene reutilizar una función ya escrita?</p></li>
+</ol>
+<p><strong>18. En carpeta. Vocabulario en inglés.</strong> Leé el
+diálogo y completá los espacios.</p>
+<p><code>debug — function — maintain — task</code></p>
+<p><strong>Nora:</strong> My program has 150 lines, and it is becoming
+difficult to understand.</p>
+<p><strong>Ethan:</strong> You should divide it into smaller parts. Each
+__________ can perform a specific __________.</p>
+<p><strong>Nora:</strong> Will that help me find mistakes?</p>
+<p><strong>Ethan:</strong> Yes. It can make it easier to __________ your
+code.</p>
+<p><strong>Nora:</strong> And what happens when I need to change
+something?</p>
+<p><strong>Ethan:</strong> Organized code is usually easier to
+__________.</p>
+<p><strong>19. Programación.</strong> Vamos a construir un pequeño
+analizador de palabras.</p>
+<p>Creá las siguientes funciones:</p>
+<ul>
+<li><code>contar_letras(palabra)</code>: devuelve la cantidad de letras
+de una palabra.</li>
+<li><code>contar_vocales(palabra)</code>: devuelve la cantidad de
+vocales.</li>
+<li><code>calcular_puntaje(palabra)</code>: devuelve el doble de la
+cantidad de letras.</li>
+</ul>
+<p>Después, escribí una parte principal del programa que solicite una
+palabra al usuario y muestre:</p>
+<ul>
+<li>La palabra ingresada.</li>
+<li>Su cantidad de letras.</li>
+<li>Su cantidad de vocales.</li>
+<li>El puntaje obtenido.</li>
+</ul>
+<p>Utilizá las funciones para obtener los resultados, en lugar de
+repetir las operaciones en la parte principal del programa.</p>
+<p><strong>20. Programación.</strong> Mejorá el analizador de palabras
+anterior incorporando una función llamada
+<code>mostrar_informe(palabra)</code>.</p>
+<p>Esta función debe utilizar las otras funciones para mostrar toda la
+información de la palabra.</p>
+<p>La parte principal del programa debería quedar sencilla: solicitar
+una palabra y llamar a <code>mostrar_informe</code>.</p>
+<p>Pensá qué instrucciones deberían estar dentro de cada función para
+que el programa quede organizado.</p>
+<hr />
+<h2 id="las-funciones-como-herramientas-para-construir-un-proyecto">5.
+Las funciones como herramientas para construir un proyecto</h2>
+<p>Un programa puede crecer poco a poco. No hace falta resolver todo el
+problema de una sola vez: podemos construir y probar cada función por
+separado.</p>
+<p>En el proyecto final vamos a desarrollar un analizador de textos con
+una propuesta lúdica. En lugar de limitarse a contar letras o palabras,
+el programa podrá proponer desafíos, encontrar palabras interesantes,
+generar pistas o calcular puntajes.</p>
+<p>Para comenzar, vamos a trabajar con un texto corto.</p>
+<h3 id="actividades-5">Actividades</h3>
+<p><strong>21. En carpeta. Diseño del programa.</strong></p>
+<p>Imaginá que estás diseñando un juego en el que el usuario introduce
+una oración y recibe un desafío relacionado con ella.</p>
+<p>Proponé al menos cuatro funciones que podría tener el programa. Para
+cada una, escribí:</p>
+<ul>
+<li>El nombre de la función.</li>
+<li>Qué tarea realizaría.</li>
+<li>Qué información necesitaría recibir.</li>
+<li>Qué resultado debería devolver, si corresponde.</li>
+</ul>
+<p>Por ejemplo:</p>
+<p><code>contar_palabras(texto)</code>: recibe un texto y devuelve la
+cantidad de palabras.</p>
+<p>Podés inventar tus propias funciones y desafíos.</p>
+<p><strong>22. Programación. Primer prototipo del
+analizador.</strong></p>
+<p>Creá un programa que solicite al usuario una oración y la
+analice.</p>
+<p>El programa deberá tener, como mínimo, estas funciones:</p>
+<ul>
+<li><code>contar_palabras(texto)</code>: devuelve la cantidad de
+palabras.</li>
+<li><code>contar_vocales(texto)</code>: devuelve la cantidad de
+vocales.</li>
+<li><code>obtener_palabra_larga(texto)</code>: devuelve la palabra más
+larga del texto.</li>
+</ul>
+<p>Para esta última función, podés utilizar <code>split()</code> para
+obtener una lista de palabras y un ciclo <code>for</code> para
+recorrerla. Si hay varias palabras con la misma longitud máxima, alcanza
+con devolver una de ellas.</p>
+<p>En la parte principal del programa, solicitá el texto y mostrá los
+resultados utilizando las funciones.</p>
+<p><strong>23. Programación. Convertimos el análisis en un
+juego.</strong></p>
+<p>Ahora vamos a agregar una propuesta lúdica al analizador.</p>
+<p>Elegí una de estas opciones:</p>
+<p><strong>Opción A. Palabra misteriosa</strong></p>
+<p>El programa muestra la cantidad de letras de una palabra del texto y
+el usuario debe adivinar cuál es. Podés seleccionar una palabra y
+mostrar una pista antes de solicitar la respuesta.</p>
+<p><strong>Opción B. Desafío de vocales</strong></p>
+<p>El programa pide al usuario que adivine cuántas vocales contiene el
+texto. Después, muestra la respuesta correcta y otorga puntos si
+acertó.</p>
+<p><strong>Opción C. Cazador de palabras largas</strong></p>
+<p>El programa invita al usuario a encontrar una palabra que tenga al
+menos cierta cantidad de letras. Después, comprueba la respuesta y
+comunica si cumple la condición.</p>
+<p>Organizá el programa utilizando funciones. Podés reutilizar las que
+ya escribiste en las actividades anteriores.</p>
+<p><strong>24. Reflexión final. En carpeta.</strong></p>
+<p>Respondé las siguientes preguntas:</p>
+<ol type="a">
+<li><p>¿Qué ventajas tiene dividir un programa en funciones?</p></li>
+<li><p>¿En qué se diferencian un parámetro y un argumento?</p></li>
+<li><p>¿Cuál es la diferencia entre <code>print</code> y
+<code>return</code>?</p></li>
+<li><p>¿Por qué una función puede llamar a otra?</p></li>
+<li><p>Si tu analizador de textos creciera y tuviera muchas funciones,
+¿cómo te ayudaría esta organización a encontrar errores y agregar nuevas
+características?</p></li>
+<li><p>¿Qué función nueva agregarías al juego para hacerlo más
+interesante?</p></li>
+</ol>
+<h3 id="para-recordar">Para recordar</h3>
+<ul>
+<li>Una función agrupa instrucciones que realizan una tarea.</li>
+<li><code>def</code> permite definir una función.</li>
+<li>El nombre seguido de paréntesis permite llamarla.</li>
+<li>Los parámetros reciben información.</li>
+<li><code>return</code> devuelve un resultado que puede utilizarse en
+otras operaciones.</li>
+<li>Una función puede llamar a otras funciones.</li>
+<li>Dividir un programa en tareas pequeñas facilita su lectura,
+modificación y reutilización.</li>
+</ul>
+<p><strong>La idea principal es que un programa bien organizado no es
+solamente un programa que funciona: también es un programa que podemos
+comprender, modificar y ampliar.</strong></p>
+</section>
+<!-- *** GUIDE END *** -->
+<!-- *** GUIDE AUXILIARY THINGS *** -->
+<!--
+
+● Sections: example, activity. solutions, figure, warning, note
+
+::: example
+### Ejemplo: Cálculo de derivadas
+Aquí va el contenido de tu ejemplo. Puedes usar Markdown normal adentro.
+:::
+
+
+● Image:
+
+::: figure
+![caption](imagen.png){width=400px}
+
+<small>Pie (Source)</small>
+:::
+
+[⌕](../../images/ ) 
+
+● Videos:
+
+ Change XXX to video-id and put time in seconds
+
+ - Yotube with start point: [Mira este momento clave en el video](https://www.youtube.com/watch?v=XXX&t=123s)
+
+ - Youtubetrimmer with start and end point: [Mirá este momento puntual del video](https://youtubetrimmer.com/view/?v=XXX&start=120&end=150&loop=0)
+
+-->
+</body>
+</html>
