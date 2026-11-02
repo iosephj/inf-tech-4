@@ -185,7 +185,78 @@ anterior en el IDLE. Ejecútalo. Agrega otra función inventada por vos
 con otro mensaje que aparezca abajo de “Find the hidden world”</p>
 </div>
 </details>
-<p>Esta guía continuará.</p>
+<details>
+<summary>
+<strong>2. Funciones que reciben datos</strong>
+</summary>
+<h2 id="funciones-que-reciben-datos">2. Funciones que reciben datos</h2>
+<p>Una función puede necesitar información para realizar su tarea. Por
+ejemplo, para saludar a una persona, necesitamos conocer su nombre.</p>
+<p>Podemos escribir:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(nombre):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Hello, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Sofia&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Lucas&quot;</span>)</span></code></pre></div>
+<p>El resultado será:</p>
+<pre class="text"><code>Hello, Sofia!
+Hello, Lucas!</code></pre>
+<p>En este ejemplo, <code>nombre</code> es un
+<strong>parámetro</strong>. Es una variable que recibe el dato que le
+proporcionamos al llamar a la función.</p>
+<p>Cuando escribimos <code>saludar(&quot;Sofia&quot;)</code>, el texto
+<code>&quot;Sofia&quot;</code> se utiliza como valor del parámetro
+<code>nombre</code> durante esa llamada.</p>
+<p>También podemos usar funciones que reciban números:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_puntaje(puntos):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Your score is </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss">.&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">10</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">25</span>)</span></code></pre></div>
+<p>La misma función permite mostrar distintos puntajes sin modificar su
+definición.</p>
+<p>Una función puede recibir más de un dato:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_palabra(palabra, puntos):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The word &#39;</span><span class="sc">{</span>palabra<span class="sc">}</span><span class="ss">&#39; is worth </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> points.&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;robot&quot;</span>, <span class="dv">5</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;planet&quot;</span>, <span class="dv">10</span>)</span></code></pre></div>
+<p>Los argumentos se escriben en el mismo orden que los parámetros
+correspondientes.</p>
+<h3 id="actividades-1">Actividades</h3>
+<div class="activity">
+<p><strong>a) En carpeta.</strong> Observá la siguiente función:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_pista(palabra):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Clue: the word is </span><span class="sc">{</span><span class="bu">len</span>(palabra)<span class="sc">}</span><span class="ss"> letters long.&quot;</span>)</span></code></pre></div>
+<ul>
+<li>¿Cuál es el nombre de la función?</li>
+<li>¿Cuál es su parámetro?</li>
+<li>¿Qué información necesita para mostrar una pista?</li>
+<li>¿Qué ocurriría si la llamáramos con
+<code>mostrar_pista(&quot;school&quot;)</code>?</li>
+</ul>
+<p><strong>b) Programar.</strong> Creá una función llamada
+<code>comparar_palabras(palabra1, palabra2)</code> que reciba dos
+palabras y muestre ambas en una misma oración.</p>
+<p>Por ejemplo, al llamarla con <code>&quot;gato&quot;</code> y
+<code>&quot;perro&quot;</code>, debería mostrar:</p>
+<pre class="text"><code>The words are gato and perro.</code></pre>
+<p>Probá la función con tres pares de palabras diferentes.</p>
+<p><strong>c) Programar.</strong> Hacer una función llamada
+encontrar_mas_larga que reciba dos palabras, compare cual tiene más
+letras usando la función <code>len()</code> y muestre el mensaje: “La
+palabra más larga es …”</p>
+<p><strong>d) Programar.</strong> Hacer una función que reciba un número
+y muestre el mensaje de si es par o impar. Sugerencia: Un número es par
+si el resto de dividirlo por 2 es cero. El resto se calcula usando el
+operador <code>%</code> que calcula el resto de una división, por
+ejemplo si ponemos <code>10 % 2</code> el resultado es 0.</p>
+</div>
+</details>
+<blockquote>
+<p>Esta guía se aprueba mostrando y explicando los problemas c) y d) del
+punto 2.</p>
+</blockquote>
 <section id="guía-de-aprendizaje-funciones-en-python" hidden>
 <h1>Guía de aprendizaje: Funciones en Python</h1>
 <p><strong>4.º año de secundaria — Programación</strong></p>
@@ -200,17 +271,17 @@ otra puede volverlo difícil de leer y modificar.</p>
 realizan una tarea y darles un nombre. Después, podemos utilizar ese
 nombre para ejecutar las instrucciones cuando las necesitemos.</p>
 <p>Observá el siguiente programa:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span></code></pre></div>
 <p>El mensaje se repite tres veces. Podemos organizarlo mediante una
 función:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_bienvenida():</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_bienvenida():</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Welcome to the text game!&quot;</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>mostrar_bienvenida()</span></code></pre></div>
 <p>Analicemos las partes:</p>
 <ul>
 <li><code>def</code> indica que estamos definiendo una función.</li>
@@ -225,7 +296,7 @@ que se ejecuten sus instrucciones.</li>
 <p><strong>Importante:</strong> definir una función no significa
 ejecutarla. Las instrucciones se ejecutan cuando llamamos a la
 función.</p>
-<h3 id="actividades-1">Actividades</h3>
+<h3 id="actividades-2">Actividades</h3>
 <p><strong>1. En carpeta.</strong> Respondé con tus palabras:</p>
 <ol type="a">
 <li><p>¿Qué problema puede aparecer cuando un programa tiene muchas
@@ -256,12 +327,12 @@ by parentheses.</p>
 <p><strong>Alex:</strong> Great! Now I can __________ the task without
 copying the instructions.</p>
 <p><strong>4. En carpeta.</strong> Observá el programa:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_mensaje():</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Find the hidden word!&quot;</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The game starts.&quot;</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>mostrar_mensaje()</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Good luck!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_mensaje():</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Find the hidden word!&quot;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The game starts.&quot;</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>mostrar_mensaje()</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Good luck!&quot;</span>)</span></code></pre></div>
 <ol type="a">
 <li><p>¿Qué aparece en pantalla?</p></li>
 <li><p>¿Cuántas veces se ejecuta el contenido de
@@ -278,15 +349,16 @@ tres reglas de un juego de palabras. Después, llamá a la función para
 que aparezcan las reglas en pantalla.</p>
 <p>Las reglas pueden ser inventadas por vos.</p>
 <hr />
-<h2 id="funciones-que-reciben-datos">2. Funciones que reciben datos</h2>
+<h2 id="funciones-que-reciben-datos-1">2. Funciones que reciben
+datos</h2>
 <p>Una función puede necesitar información para realizar su tarea. Por
 ejemplo, para saludar a una persona, necesitamos conocer su nombre.</p>
 <p>Podemos escribir:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(nombre):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Hello, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Sofia&quot;</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Lucas&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar(nombre):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Hello, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Sofia&quot;</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>saludar(<span class="st">&quot;Lucas&quot;</span>)</span></code></pre></div>
 <p>El resultado será:</p>
 <pre class="text"><code>Hello, Sofia!
 Hello, Lucas!</code></pre>
@@ -297,25 +369,25 @@ proporcionamos al llamar a la función.</p>
 <code>&quot;Sofia&quot;</code> se utiliza como valor del parámetro
 <code>nombre</code> durante esa llamada.</p>
 <p>También podemos usar funciones que reciban números:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_puntaje(puntos):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Your score is </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss">.&quot;</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">10</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_puntaje(puntos):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Your score is </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss">.&quot;</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">10</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>mostrar_puntaje(<span class="dv">25</span>)</span></code></pre></div>
 <p>La misma función permite mostrar distintos puntajes sin modificar su
 definición.</p>
 <p>Una función puede recibir más de un dato:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_palabra(palabra, puntos):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The word &#39;</span><span class="sc">{</span>palabra<span class="sc">}</span><span class="ss">&#39; is worth </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> points.&quot;</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;robot&quot;</span>, <span class="dv">5</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;planet&quot;</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_palabra(palabra, puntos):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The word &#39;</span><span class="sc">{</span>palabra<span class="sc">}</span><span class="ss">&#39; is worth </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> points.&quot;</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;robot&quot;</span>, <span class="dv">5</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>mostrar_palabra(<span class="st">&quot;planet&quot;</span>, <span class="dv">10</span>)</span></code></pre></div>
 <p>Los argumentos se escriben en el mismo orden que los parámetros
 correspondientes.</p>
-<h3 id="actividades-2">Actividades</h3>
+<h3 id="actividades-3">Actividades</h3>
 <p><strong>6. En carpeta.</strong> Observá la siguiente función:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_pista(palabra):</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Clue: the word is </span><span class="sc">{</span><span class="bu">len</span>(palabra)<span class="sc">}</span><span class="ss"> letters long.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_pista(palabra):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Clue: the word is </span><span class="sc">{</span><span class="bu">len</span>(palabra)<span class="sc">}</span><span class="ss"> letters long.&quot;</span>)</span></code></pre></div>
 <ol type="a">
 <li><p>¿Cuál es el nombre de la función?</p></li>
 <li><p>¿Cuál es su parámetro?</p></li>
@@ -325,12 +397,12 @@ correspondientes.</p>
 </ol>
 <p><strong>7. En carpeta.</strong> Analizá las llamadas a esta
 función:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_puntos(aciertos, bonus):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(aciertos <span class="op">*</span> <span class="dv">10</span> <span class="op">+</span> bonus)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">2</span>, <span class="dv">0</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">4</span>, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_puntos(aciertos, bonus):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(aciertos <span class="op">*</span> <span class="dv">10</span> <span class="op">+</span> bonus)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">2</span>, <span class="dv">0</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>calcular_puntos(<span class="dv">4</span>, <span class="dv">10</span>)</span></code></pre></div>
 <ol type="a">
 <li><p>Predecí qué resultado produce cada llamada.</p></li>
 <li><p>¿Qué función cumple cada parámetro?</p></li>
@@ -379,12 +451,12 @@ las que necesitamos que una función calcule un resultado para que otra
 parte del programa pueda utilizarlo.</p>
 <p>Para eso usamos <code>return</code>.</p>
 <p>Observá el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_letras(palabra):</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(palabra)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>cantidad <span class="op">=</span> contar_letras(<span class="st">&quot;aventura&quot;</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cantidad)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_letras(palabra):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(palabra)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>cantidad <span class="op">=</span> contar_letras(<span class="st">&quot;aventura&quot;</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cantidad)</span></code></pre></div>
 <p>El programa muestra:</p>
 <pre class="text"><code>8</code></pre>
 <p>La función <code>contar_letras</code> recibe una palabra y devuelve
@@ -396,17 +468,17 @@ llamada.</p>
 <h3 id="diferencia-entre-print-y-return">Diferencia entre
 <code>print</code> y <code>return</code></h3>
 <p>Observá los dos ejemplos:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_a(palabra):</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(palabra.count(<span class="st">&quot;a&quot;</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_cantidad_a(palabra):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> palabra.count(<span class="st">&quot;a&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_a(palabra):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(palabra.count(<span class="st">&quot;a&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> obtener_cantidad_a(palabra):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> palabra.count(<span class="st">&quot;a&quot;</span>)</span></code></pre></div>
 <p>La primera función muestra un resultado, pero no lo devuelve para que
 podamos guardarlo en una variable.</p>
 <p>La segunda función devuelve el resultado, por lo que podemos
 utilizarlo en otras operaciones.</p>
 <p>Por ejemplo:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cantidad <span class="op">=</span> obtener_cantidad_a(<span class="st">&quot;banana&quot;</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cantidad <span class="op">+</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>cantidad <span class="op">=</span> obtener_cantidad_a(<span class="st">&quot;banana&quot;</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cantidad <span class="op">+</span> <span class="dv">2</span>)</span></code></pre></div>
 <p>El resultado será <code>5</code>, porque <code>&quot;banana&quot;</code>
 contiene tres letras <code>a</code> y luego sumamos dos.</p>
 <p><strong>Para recordar:</strong></p>
@@ -417,7 +489,7 @@ utilizar.</li>
 </ul>
 <p>No todas las funciones necesitan devolver un resultado. Algunas solo
 realizan una tarea, como mostrar un mensaje.</p>
-<h3 id="actividades-3">Actividades</h3>
+<h3 id="actividades-4">Actividades</h3>
 <p><strong>11. En carpeta.</strong> Explicá la diferencia entre
 <code>print</code> y <code>return</code>. Para justificar tu respuesta,
 indicá en cuál de los siguientes casos resulta más conveniente utilizar
@@ -431,12 +503,12 @@ después.</p></li>
 total.</p></li>
 </ol>
 <p><strong>12. En carpeta.</strong> Analizá el programa y respondé:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> doble(numero):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numero <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> doble(<span class="dv">7</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doble(<span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> doble(numero):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numero <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> doble(<span class="dv">7</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doble(<span class="dv">4</span>))</span></code></pre></div>
 <ol type="a">
 <li><p>¿Qué aparece en pantalla?</p></li>
 <li><p>¿Qué valor se guarda en <code>resultado</code>?</p></li>
@@ -445,11 +517,11 @@ total.</p></li>
 dentro de <code>print</code>?</p></li>
 </ol>
 <p><strong>13. En carpeta.</strong> Un alumno escribió:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar(a, b):</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a <span class="op">+</span> b)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> sumar(<span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado <span class="op">+</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar(a, b):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a <span class="op">+</span> b)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> sumar(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado <span class="op">+</span> <span class="dv">10</span>)</span></code></pre></div>
 <p>El alumno espera que el programa muestre <code>17</code>, pero el
 programa no funciona como espera.</p>
 <ol type="a">
@@ -490,22 +562,22 @@ palabra secreta. El programa necesita:</p>
 <li>Mostrar el resultado.</li>
 </ul>
 <p>Podemos organizar el código en distintas funciones:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_instrucciones():</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Guess the secret word!&quot;</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_letras(palabra):</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(palabra)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_puntaje(palabra):</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> contar_letras(palabra) <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_resultado(palabra):</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    puntos <span class="op">=</span> calcular_puntaje(palabra)</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The word has </span><span class="sc">{</span>contar_letras(palabra)<span class="sc">}</span><span class="ss"> letters.&quot;</span>)</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;You earn </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> points.&quot;</span>)</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>mostrar_instrucciones()</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>mostrar_resultado(<span class="st">&quot;robot&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_instrucciones():</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Guess the secret word!&quot;</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contar_letras(palabra):</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(palabra)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcular_puntaje(palabra):</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> contar_letras(palabra) <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_resultado(palabra):</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    puntos <span class="op">=</span> calcular_puntaje(palabra)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The word has </span><span class="sc">{</span>contar_letras(palabra)<span class="sc">}</span><span class="ss"> letters.&quot;</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;You earn </span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> points.&quot;</span>)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>mostrar_instrucciones()</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>mostrar_resultado(<span class="st">&quot;robot&quot;</span>)</span></code></pre></div>
 <p>En este programa, cada función tiene una responsabilidad
 concreta.</p>
 <p>Además, una función puede llamar a otra. Por ejemplo,
@@ -516,7 +588,7 @@ pequeñas.</p>
 <p>No es necesario que cada función tenga una sola línea, ni que todos
 los programas estén divididos en una gran cantidad de funciones. La idea
 es separar las tareas que conviene identificar y reutilizar.</p>
-<h3 id="actividades-4">Actividades</h3>
+<h3 id="actividades-5">Actividades</h3>
 <p><strong>16. En carpeta.</strong> Analizá el programa anterior.</p>
 <ol type="a">
 <li><p>¿Qué función muestra las instrucciones?</p></li>
@@ -528,14 +600,14 @@ valiera 5 puntos, ¿qué función habría que modificar?</p></li>
 <li><p>¿Por qué esta organización facilita los cambios?</p></li>
 </ol>
 <p><strong>17. En carpeta.</strong> Leé el siguiente programa:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar(a, b):</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiplicar_por_dos(numero):</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sumar(numero, numero)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> multiplicar_por_dos(<span class="dv">6</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sumar(a, b):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiplicar_por_dos(numero):</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sumar(numero, numero)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> multiplicar_por_dos(<span class="dv">6</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div>
 <ol type="a">
 <li><p>Seguí la ejecución paso a paso y predecí el resultado.</p></li>
 <li><p>¿Qué función llama a otra función?</p></li>
@@ -598,7 +670,7 @@ una propuesta lúdica. En lugar de limitarse a contar letras o palabras,
 el programa podrá proponer desafíos, encontrar palabras interesantes,
 generar pistas o calcular puntajes.</p>
 <p>Para comenzar, vamos a trabajar con un texto corto.</p>
-<h3 id="actividades-5">Actividades</h3>
+<h3 id="actividades-6">Actividades</h3>
 <p><strong>21. En carpeta. Diseño del programa.</strong></p>
 <p>Imaginá que estás diseñando un juego en el que el usuario introduce
 una oración y recibe un desafío relacionado con ella.</p>

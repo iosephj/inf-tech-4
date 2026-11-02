@@ -103,7 +103,95 @@ print("Good luck!")
 
 </details>
 
-Esta guía continuará.
+
+<details>
+
+<summary>**2. Funciones que reciben datos**</summary>
+
+## 2. Funciones que reciben datos
+
+Una función puede necesitar información para realizar su tarea. Por ejemplo, para saludar a una persona, necesitamos conocer su nombre.
+
+Podemos escribir:
+
+```python
+def saludar(nombre):
+    print(f"Hello, {nombre}!")
+
+saludar("Sofia")
+saludar("Lucas")
+```
+
+El resultado será:
+
+```text
+Hello, Sofia!
+Hello, Lucas!
+```
+
+En este ejemplo, `nombre` es un **parámetro**. Es una variable que recibe el dato que le proporcionamos al llamar a la función.
+
+Cuando escribimos `saludar("Sofia")`, el texto `"Sofia"` se utiliza como valor del parámetro `nombre` durante esa llamada.
+
+También podemos usar funciones que reciban números:
+
+```python
+def mostrar_puntaje(puntos):
+    print(f"Your score is {puntos}.")
+
+mostrar_puntaje(10)
+mostrar_puntaje(25)
+```
+
+La misma función permite mostrar distintos puntajes sin modificar su definición.
+
+Una función puede recibir más de un dato:
+
+```python
+def mostrar_palabra(palabra, puntos):
+    print(f"The word '{palabra}' is worth {puntos} points.")
+
+mostrar_palabra("robot", 5)
+mostrar_palabra("planet", 10)
+```
+
+Los argumentos se escriben en el mismo orden que los parámetros correspondientes.
+
+### Actividades
+
+::: activity
+
+**a) En carpeta.** Observá la siguiente función:
+
+```python
+def mostrar_pista(palabra):
+    print(f"Clue: the word is {len(palabra)} letters long.")
+```
+
+- ¿Cuál es el nombre de la función?
+- ¿Cuál es su parámetro?
+- ¿Qué información necesita para mostrar una pista?
+- ¿Qué ocurriría si la llamáramos con `mostrar_pista("school")`?
+
+**b) Programar.** Creá una función llamada `comparar_palabras(palabra1, palabra2)` que reciba dos palabras y muestre ambas en una misma oración.
+
+Por ejemplo, al llamarla con `"gato"` y `"perro"`, debería mostrar:
+
+```text
+The words are gato and perro.
+```
+
+Probá la función con tres pares de palabras diferentes.
+
+**c) Programar.** Hacer una función llamada encontrar_mas_larga que reciba dos palabras, compare cual tiene más letras usando la función `len()` y muestre el mensaje: "La palabra más larga es ..."
+
+**d) Programar.** Hacer una función que reciba un número y muestre el mensaje de si es par o impar. Sugerencia: Un número es par si el resto de dividirlo por 2 es cero. El resto se calcula usando el operador `%` que calcula el resto de una división, por ejemplo si ponemos `10 % 2` el resultado es 0.
+
+:::
+
+</details>
+
+> Esta guía se aprueba mostrando y explicando los problemas c) y d) del punto 2.
 
 
 <div hidden>
