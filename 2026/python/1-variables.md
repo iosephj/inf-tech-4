@@ -7,11 +7,7 @@ version: "22/06/26"
 
 <!-- Image -->
 <br>
-   <center>![](https://upload.wikimedia.org/wikipedia/commons/3/31/Python-logo.png){width=300px}</center>
-   <center>
-      <span class="grey3 size70">Logo de Python. </span>
-      <span class="grey3 size50">wikimedia.org</span>
-   </center>
+   <center>![](https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png){width=200px}</center>
 <br>
 
 
@@ -287,7 +283,8 @@ print(cant)
 ```
 
 
-> Para aprobar esta guía debes mostrar y explicar al profesor los problemas **f)** y **g)**. 
+<span class="orange2">**Criterio de aprobación:** Para aprobar esta guía debes mostrar, en computadora o papel, los problemas **f)** y **g)** y explicarlos.</span>
+
 <!-- *** GUIDE END *** -->
 
 

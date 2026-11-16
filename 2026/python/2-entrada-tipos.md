@@ -219,7 +219,13 @@ Gracias por usar el programa.
 
 :::
 
-> Esta guía se aprueba especialmente con el problema **4)** del punto **2**
+---
+
+::: warning
+
+**Criterio de aprobación:** Esta guía se aprueba especialmente mostrando y explicando el programa del problema **4)** del punto **2**
+
+:::
 
 
 <!-- *** GUIDE END *** -->

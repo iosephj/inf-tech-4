@@ -191,7 +191,9 @@ Probá la función con tres pares de palabras diferentes.
 
 </details>
 
-> Esta guía se aprueba mostrando y explicando los problemas c) y d) del punto 2.
+::: warning
+**Criterio de aprobación:** Esta guía se aprueba mostrando y explicando los problemas c) y d) del punto 2.
+:::
 
 
 <div hidden>

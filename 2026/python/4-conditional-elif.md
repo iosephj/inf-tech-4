@@ -183,8 +183,10 @@ Debe reconocer al menos **cinco palabras** utilizando `if`, `elif` y `else`.
 
 :::
 
+---
+
 ::: warning
-Para aprobar esta guía como mínimo debes mostrar la carpeta con los ejercicios pedidos y el programa que hiciste en la actividad 3 del punto 3. Además debes responder las preguntas que te haga el profesor.
+**Criterio de aprobación:** Para aprobar esta guía como mínimo debes mostrar la carpeta con los ejercicios pedidos y el programa que hiciste en la actividad 3 del punto 3. Además debes responder las preguntas que te haga el profesor.
 :::
 
 

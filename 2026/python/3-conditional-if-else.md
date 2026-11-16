@@ -189,11 +189,14 @@ Al finalizar, el programa debe imprimir:
 Gracias por utilizar el sistema.
 ```
 
-::: warning
-Para aprobar esta guía de deben mostrar todos las actividades y explicar este último problema.
 :::
 
+---
+
+::: warning
+**Criterio de Aprobación:** Para aprobar esta guía de deben mostrar todos las actividades (de carpeta y computadora) y explicar el último problema sobre el sistema de acceso a un torneo escolar (problema 5 del punto 3). NO SE ACEPTAN FOTOS.
 :::
+
 
 
 

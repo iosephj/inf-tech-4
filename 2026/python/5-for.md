@@ -6,6 +6,10 @@ version: "09/08/26"
 
 <!-- *** GUIDE START *** -->
 
+<details>
+
+<summary>**1. Repetir tareas con `for`**</summary>
+
 ## 1. Repetir tareas con `for`
 
 Hasta ahora, los programas que escribimos ejecutaban sus instrucciones una vez. Pero muchas veces necesitamos hacer algo varias veces: mostrar varios mensajes, revisar caracteres de un texto, contar elementos o repetir una operación.
@@ -92,6 +96,14 @@ for i in range(4):
 
 :::
 
+</details>
+
+
+<details>
+
+<summary>**2. La variable del `for`**</summary>
+
+
 ## 2. La variable del `for`
 
 La variable utilizada por `for` permite saber en qué repetición estamos.
@@ -141,6 +153,14 @@ Es conveniente elegir nombres que ayuden a entender el programa.
 
 :::
 
+</details>
+
+
+<details>
+
+<summary>**3. `for` y decisiones**</summary>
+
+
 ## 3. `for` y decisiones
 
 Un `for` puede contener un `if`.
@@ -185,7 +205,12 @@ for n in range(30):
 
 :::
 
+</details>
 
+
+<details>
+
+<summary>**4. Recorrer una palabra**</summary>
 
 ## 4. Recorrer una palabra
 
@@ -251,6 +276,12 @@ o
 ```
 :::
 
+</details>
+
+
+<details>
+
+<summary>**5. Contar mientras recorremos un texto**</summary>
 
 ## 5. Contar mientras recorremos un texto
 
@@ -298,8 +329,18 @@ Luego responde: ¿Por qué `cantidad` debe comenzar en 0?
 **3)** Hacer un programa como el anterior pero que en vez de mostrar en pantalla cuantas veces aparece la letra muestre el mensaje "Aparece más de tres veces" si esta afirmación resulta verdadera, en caso contrario que muestre "Aparece 3 veces o menos".
 :::
 
+</details>
+
+
+<details>
+
+<summary>**6. Separar los programas en funciones**</summary>
 
 ## 6. Separar los programas en funciones
+
+::: warning
+Este punto no es obligatorio
+:::
 
 <div hidden>Esto podría ir en una guía anterior</div>
 
@@ -383,8 +424,12 @@ Por ahora no es necesario profundizar en cómo funcionan las funciones. Las util
 
 :::
 
+</details>
+
+---
+
 ::: warning
-Para aprobar esta guía debes mostrar los ejercicios de la carpeta y los que se programan. Además responder en forma oral cualquiera de estas preguntas: ¿Para qué sirve un for? ¿Qué diferencia hay entre `for i in range(10)` y `for i in palabra` (que es i en cada caso)? ¿Para qué es la sangría del for?  
+**Criterio de aprobación:** Para aprobar esta guía debes mostrar los ejercicios de la carpeta y los que se programan (salvo el pto 6 que no es obligatorio). Además responder en forma oral cualquiera de estas preguntas: ¿Para qué sirve un for? ¿Qué diferencia hay entre `for i in range(10)` y `for i in palabra` (que es i en cada caso)? ¿Para qué es la sangría del for?  
 :::
 
 <div hidden>

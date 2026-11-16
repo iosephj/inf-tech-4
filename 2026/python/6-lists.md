@@ -376,7 +376,7 @@ for word in text:
 - contar cuántas palabras cumplen esa condición;
 - mostrar al final: `Cantidad de palabras encontradas: X` donde `X` sea la cantidad encontrada.
 
-**g)** **Desafío:** Crear un programa que tenga una lista de palabras. Pedir al usuario que ingrese una palabra con:
+**g)** **Desafío (no obligatorio):** Crear un programa que tenga una lista de palabras. Pedir al usuario que ingrese una palabra con:
 
 ```python
 palabra_buscada = input("Enter a word: ")
@@ -398,8 +398,10 @@ si el usuario escribe `cat` el programa debe mostrar: `Occurrences: 3`
 
 </details>
 
+---
+
 ::: warning
-Esta guía se aprueba mostrando los programas, los ejercicios de la carpeta y explicando el problema **f)** del punto 5.
+**Criterio de aprobación mínima:** Esta guía se aprueba mostrando los programas del punto 5 (en papel o computadora), los ejercicios pedidos en carpeta y explicando el problema **f)** del punto 5.
 :::
 
 <!-- *** GUIDE END *** -->
